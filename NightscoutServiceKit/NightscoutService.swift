@@ -17,6 +17,8 @@ public final class NightscoutService: Service {
 
     public static let localizedTitle = LocalizedString("Nightscout", comment: "The title of the Nightscout service")
 
+    public weak var serviceDelegate: ServiceDelegate?
+
     public var siteURL: URL?
 
     public var apiSecret: String?
@@ -31,16 +33,14 @@ public final class NightscoutService: Service {
 
     private let log = OSLog(category: "NightscoutService")
 
-    public init() {
+    public init() {}
+
+    public init?(rawState: RawStateValue) {
         if let credentials = try? KeychainManager().getNightscoutCredentials() {
             self.siteURL = credentials.siteURL
             self.apiSecret = credentials.apiSecret
         }
         createUploader()
-    }
-
-    public convenience init?(rawState: RawStateValue) {
-        self.init()
     }
 
     public var rawState: RawStateValue {
@@ -66,6 +66,7 @@ public final class NightscoutService: Service {
     public func completeUpdate() {
         try? KeychainManager().setNightscoutCredentials(siteURL: siteURL, apiSecret: apiSecret)
         createUploader()
+        serviceDelegate?.serviceDidUpdateState(self)
     }
 
     public func completeDelete() {
