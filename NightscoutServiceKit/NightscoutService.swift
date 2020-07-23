@@ -87,13 +87,25 @@ extension NightscoutService: RemoteDataService {
 
     public var carbDataLimit: Int? { return 1000 }
 
-    public func uploadCarbData(deleted: [DeletedCarbEntry], stored: [StoredCarbEntry], completion: @escaping (Result<Bool, Error>) -> Void) {
-        uploader.deleteCarbEntries(deleted) { result in
+    public func uploadCarbData(_ stored: [StoredCarbEntry], completion: @escaping (Result<Bool, Error>) -> Void) {
+
+        // Use only the latest entry, by syncVersion, for each nightscoutIdentifier
+        var latestEntries = [String: StoredCarbEntry]()
+        for storedEntry in stored {
+            let nightscoutIdentifier = storedEntry.nightscoutIdentifier
+            if let latestEntry = latestEntries[nightscoutIdentifier], latestEntry.syncVersion > storedEntry.syncVersion {
+                continue
+            }
+            latestEntries[nightscoutIdentifier] = storedEntry
+        }
+        let stored = latestEntries.values
+
+        uploader.deleteCarbEntries(stored.filter { !$0.isActive }) { result in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
             case .success(let uploadedDeleted):
-                self.uploader.uploadCarbEntries(stored) { result in
+                self.uploader.uploadCarbEntries(stored.filter { $0.isActive }) { result in
                     switch result {
                     case .failure(let error):
                         completion(.failure(error))

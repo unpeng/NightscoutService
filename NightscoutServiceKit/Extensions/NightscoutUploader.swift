@@ -45,7 +45,7 @@ extension NightscoutUploader {
         }
     }
 
-    func deleteCarbEntries(_ entries: [DeletedCarbEntry], completion: @escaping (Result<Bool, Error>) -> Void) {
+    func deleteCarbEntries(_ entries: [StoredCarbEntry], completion: @escaping (Result<Bool, Error>) -> Void) {
         guard !entries.isEmpty else {
             completion(.success(false))
             return
@@ -109,14 +109,6 @@ extension StoredCarbEntry {
 
     var nightscoutIdentifier: String {
         return externalID ?? syncIdentifier ?? sampleUUID.uuidString
-    }
-
-}
-
-extension DeletedCarbEntry {
-
-    var nightscoutIdentifier: String? {
-        return externalID ?? syncIdentifier ?? uuid?.uuidString
     }
 
 }
