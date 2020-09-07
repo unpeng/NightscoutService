@@ -11,7 +11,7 @@ import NightscoutUploadKit
 
 extension DoseEntry {
 
-    func treatment(enteredBy source: String) -> NightscoutTreatment? {
+    func treatment(enteredBy source: String, withObjectId objectId: String?) -> NightscoutTreatment? {
         switch type {
         case .basal:
             return nil
@@ -26,9 +26,8 @@ extension DoseEntry {
                 programmed: programmedUnits,  // Persisted pump events are always completed
                 unabsorbed: 0,  // The pump's reported IOB isn't relevant, nor stored
                 duration: duration,
-                carbs: 0,
-                ratio: 0,
-                id: syncIdentifier
+                id: objectId,
+                syncIdentifier: syncIdentifier
             )
         case .resume:
             return PumpResumeTreatment(timestamp: startDate, enteredBy: source)
@@ -43,7 +42,8 @@ extension DoseEntry {
                 absolute: unitsPerHour,
                 duration: endDate.timeIntervalSince(startDate),
                 amount: deliveredUnits,
-                id: syncIdentifier
+                id: objectId,
+                syncIdentifier: syncIdentifier
             )
         }
     }

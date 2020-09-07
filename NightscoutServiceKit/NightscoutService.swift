@@ -16,12 +16,25 @@ public final class NightscoutService: Service {
     public static let serviceIdentifier = "NightscoutService"
 
     public static let localizedTitle = LocalizedString("Nightscout", comment: "The title of the Nightscout service")
+    
+    public let objectIdCacheKeepTime = TimeInterval(24 * 60 * 60)
 
     public weak var serviceDelegate: ServiceDelegate?
 
     public var siteURL: URL?
 
     public var apiSecret: String?
+    
+    /// Maps loop syncIdentifiers to Nightscout objectIds
+    var objectIdCache: ObjectIdCache {
+        get {
+            return lockedObjectIdCache.value
+        }
+        set {
+            lockedObjectIdCache.value = newValue
+        }
+    }
+    private let lockedObjectIdCache: Locked<ObjectIdCache>
 
     private lazy var uploader: NightscoutUploader! = {
         guard let siteURL = siteURL, let apiSecret = apiSecret else {
@@ -32,14 +45,24 @@ public final class NightscoutService: Service {
 
     private let log = OSLog(category: "NightscoutService")
 
-    public init() {}
+    public init() {
+        lockedObjectIdCache = Locked(ObjectIdCache())
+    }
 
     public required init?(rawState: RawStateValue) {
+        if let objectIdCacheRaw = rawState["objectIdCache"] as? ObjectIdCache.RawValue,
+            let objectIdCache = ObjectIdCache(rawValue: objectIdCacheRaw)
+        {
+            self.lockedObjectIdCache =  Locked(objectIdCache)
+        } else {
+            self.lockedObjectIdCache = Locked(ObjectIdCache())
+        }
+        
         restoreCredentials()
     }
 
     public var rawState: RawStateValue {
-        return [:]
+        return ["objectIdCache": objectIdCache.rawValue]
     }
 
     public var hasConfiguration: Bool { return siteURL != nil && apiSecret?.isEmpty == false }
@@ -92,17 +115,28 @@ extension NightscoutService: RemoteDataService {
             switch result {
             case .failure(let error):
                 completion(.failure(error))
-            case .success(let createdUploaded):
-                self.uploader.updateCarbData(updated) { result in
+            case .success(let createdObjectIds):
+                let createdUploaded = !created.isEmpty
+                let syncIdentifiers = created.map { $0.syncIdentifier }
+                for (syncIdentifier, objectId) in zip(syncIdentifiers, createdObjectIds) {
+                    if let syncIdentifier = syncIdentifier {
+                        self.objectIdCache.add(syncIdentifier: syncIdentifier, objectId: objectId)
+                    }
+                }
+                self.serviceDelegate?.serviceDidUpdateState(self)
+                
+                self.uploader.updateCarbData(updated, usingObjectIdCache: self.objectIdCache) { result in
                     switch result {
                     case .failure(let error):
                         completion(.failure(error))
                     case .success(let updatedUploaded):
-                        self.uploader.deleteCarbData(deleted) { result in
+                        self.uploader.deleteCarbData(deleted, usingObjectIdCache: self.objectIdCache) { result in
                             switch result {
                             case .failure(let error):
                                 completion(.failure(error))
                             case .success(let deletedUploaded):
+                                self.objectIdCache.purge(before: Date().addingTimeInterval(-self.objectIdCacheKeepTime))
+                                self.serviceDelegate?.serviceDidUpdateState(self)
                                 completion(.success(createdUploaded || updatedUploaded || deletedUploaded))
                             }
                         }
@@ -115,7 +149,20 @@ extension NightscoutService: RemoteDataService {
     public var doseDataLimit: Int? { return 1000 }
 
     public func uploadDoseData(_ stored: [DoseEntry], completion: @escaping (Result<Bool, Error>) -> Void) {
-        uploader.uploadDoses(stored, completion: completion)
+        uploader.uploadDoses(stored, usingObjectIdCache: self.objectIdCache) { (result) in
+            switch (result) {
+            case .success(let objectIds):
+                let syncIdentifiers = stored.map { $0.syncIdentifier }
+                for (syncIdentifier, objectId) in zip(syncIdentifiers, objectIds) {
+                    if let syncIdentifier = syncIdentifier {
+                        self.objectIdCache.add(syncIdentifier: syncIdentifier, objectId: objectId)
+                    }
+                }
+                completion(.success(!stored.isEmpty))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 
     public var dosingDecisionDataLimit: Int? { return 1000 }

@@ -13,17 +13,19 @@ import HealthKit
 
 extension SyncCarbObject {
 
-    var mealBolusNightscoutTreatment: MealBolusNightscoutTreatment? {
-        guard let nightscoutIdentifier = nightscoutIdentifier else {
-            return nil
-        }
+    func carbCorrectionNightscoutTreatment(withObjectId objectId: String? = nil) -> CarbCorrectionNightscoutTreatment? {
 
-        return MealBolusNightscoutTreatment(timestamp: startDate,
+        return CarbCorrectionNightscoutTreatment(
+            timestamp: startDate,
             enteredBy: "loop://\(UIDevice.current.name)",
-            id: nightscoutIdentifier,
+            id: objectId,
             carbs: lround(grams),
             absorptionTime: absorptionTime,
-            foodType: foodType)
+            foodType: foodType,
+            syncIdentifier: syncIdentifier,
+            userEnteredAt: userCreatedDate,
+            userLastModifiedAt: userUpdatedDate
+        )
     }
 
 }
