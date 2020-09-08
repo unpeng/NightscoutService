@@ -12,6 +12,10 @@ import LoopKitUI
 import NightscoutServiceKit
 
 extension NightscoutService: ServiceUI {
+    
+    public static var image: UIImage? {
+        UIImage(named: "nightscout", in: Bundle(for: NightscoutServiceTableViewController.self), compatibleWith: nil)!
+    }
 
     public static func setupViewController() -> (UIViewController & ServiceSetupNotifying & CompletionNotifying)? {
         return ServiceViewController(rootViewController: NightscoutServiceTableViewController(service: NightscoutService(), for: .create))

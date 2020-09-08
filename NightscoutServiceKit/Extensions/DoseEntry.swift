@@ -26,13 +26,13 @@ extension DoseEntry {
                 programmed: programmedUnits,  // Persisted pump events are always completed
                 unabsorbed: 0,  // The pump's reported IOB isn't relevant, nor stored
                 duration: duration,
-                id: objectId,
+                /* id: objectId, */ /// Specifying _id only works when doing a put (modify); all dose uploads are currently posting so they can be either create or update
                 syncIdentifier: syncIdentifier
             )
         case .resume:
-            return PumpResumeTreatment(timestamp: startDate, enteredBy: source)
+            return PumpResumeTreatment(timestamp: startDate, enteredBy: source, /* id: objectId, */ syncIdentifier: syncIdentifier)
         case .suspend:
-            return PumpSuspendTreatment(timestamp: startDate, enteredBy: source)
+            return PumpSuspendTreatment(timestamp: startDate, enteredBy: source, /* id: objectId, */ syncIdentifier: syncIdentifier)
         case .tempBasal:
             return TempBasalNightscoutTreatment(
                 timestamp: startDate,
@@ -42,7 +42,7 @@ extension DoseEntry {
                 absolute: unitsPerHour,
                 duration: endDate.timeIntervalSince(startDate),
                 amount: deliveredUnits,
-                id: objectId,
+                /* id: objectId, */ /// Specifying _id only works when doing a put (modify); all dose uploads are currently posting so they can be either create or update
                 syncIdentifier: syncIdentifier
             )
         }

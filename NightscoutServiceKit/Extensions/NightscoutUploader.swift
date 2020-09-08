@@ -50,16 +50,17 @@ extension NightscoutUploader {
     }
 
     func deleteCarbData(_ data: [SyncCarbObject], usingObjectIdCache objectIdCache: ObjectIdCache, completion: @escaping (Result<Bool, Error>) -> Void) {
-        guard !data.isEmpty else {
-            completion(.success(false))
-            return
-        }
 
         let objectIds = data.compactMap { (carbEntry) -> String? in
             if let syncIdentifier = carbEntry.syncIdentifier {
                 return objectIdCache.findObjectIdBySyncIdentifier(syncIdentifier)
             }
             return nil
+        }
+
+        guard !objectIds.isEmpty else {
+            completion(.success(false))
+            return
         }
 
         deleteTreatmentsByObjectId(objectIds) { error in
