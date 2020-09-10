@@ -48,6 +48,8 @@
 		A9E4153622BC89A300168E14 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4153522BC89A300168E14 /* NibLoadable.swift */; };
 		A9E4153822BC89B600168E14 /* IdentifiableClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4153722BC89B600168E14 /* IdentifiableClass.swift */; };
 		A9E4153B22BC8A3800168E14 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4153A22BC8A3800168E14 /* UIColor.swift */; };
+		C1E703642506BE9400DAB534 /* ObjectIdCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E703632506BE9400DAB534 /* ObjectIdCache.swift */; };
+		C1E7036625070A0E00DAB534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1E7036525070A0E00DAB534 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,8 @@
 		A9E4153522BC89A300168E14 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		A9E4153722BC89B600168E14 /* IdentifiableClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableClass.swift; sourceTree = "<group>"; };
 		A9E4153A22BC8A3800168E14 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C1E703632506BE9400DAB534 /* ObjectIdCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectIdCache.swift; sourceTree = "<group>"; };
+		C1E7036525070A0E00DAB534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +256,7 @@
 				A993990222BC7095005E39D3 /* NightscoutService.swift */,
 				A90E399F22BC77220016DFE8 /* Extensions */,
 				A9B007BB22BD7120000131DE /* Localizable.strings */,
+				C1E703632506BE9400DAB534 /* ObjectIdCache.swift */,
 			);
 			path = NightscoutServiceKit;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				A993990622BC70C9005E39D3 /* NightscoutServiceTableViewController.swift */,
 				A9E4153922BC8A2C00168E14 /* Extensions */,
 				A9B007BE22BD7130000131DE /* Localizable.strings */,
+				C1E7036525070A0E00DAB534 /* Assets.xcassets */,
 			);
 			path = NightscoutServiceKitUI;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1E7036625070A0E00DAB534 /* Assets.xcassets in Resources */,
 				A9B007C022BD7130000131DE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +620,7 @@
 				"$(BUILT_PRODUCTS_DIR)/NightscoutServiceKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/NightscoutServiceKitUI.framework",
 				"$(BUILT_PRODUCTS_DIR)/NightscoutUploadKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/Crypto.framework",
 			);
 			name = "Copy Frameworks with Carthage";
 			outputFileListPaths = (
@@ -637,6 +645,7 @@
 				A934B61A2358F5FC00949C8B /* TemporaryScheduleOverride.swift in Sources */,
 				A915719E23329845005429E1 /* DiagnosticLog+Subsystem.swift in Sources */,
 				A94DA7642353CF930082E26D /* StoredGlucoseSample.swift in Sources */,
+				C1E703642506BE9400DAB534 /* ObjectIdCache.swift in Sources */,
 				A90E39A722BC7A360016DFE8 /* HKUnit.swift in Sources */,
 				A90E399E22BC76DB0016DFE8 /* TimeInterval.swift in Sources */,
 				A90E39A122BC773A0016DFE8 /* NightscoutUploader.swift in Sources */,
