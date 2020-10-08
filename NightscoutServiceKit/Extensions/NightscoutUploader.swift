@@ -11,49 +11,59 @@ import NightscoutUploadKit
 
 extension NightscoutUploader {
 
-    func uploadCarbEntries(_ entries: [StoredCarbEntry], completion: @escaping (Result<Bool, Error>) -> Void) {
-        guard !entries.isEmpty else {
-            completion(.success(false))
+    func createCarbData(_ data: [SyncCarbObject], completion: @escaping (Result<[String], Error>) -> Void) {
+        guard !data.isEmpty else {
+            completion(.success([]))
             return
         }
 
-        var created = [MealBolusNightscoutTreatment]()
-        var modified = [MealBolusNightscoutTreatment]()
-
-        for entry in entries {
-            let treatment = entry.mealBolusNightscoutTreatment
-            if entry.externalID != nil {
-                modified.append(treatment)
-            } else {
-                created.append(treatment)
-            }
-        }
-
-        upload(created) { result in
+        upload(data.compactMap { $0.carbCorrectionNightscoutTreatment() }) { result in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
-            case .success:
-                self.modifyTreatments(modified) { error in
-                    if let error = error {
-                        completion(.failure(error))
-                    } else {
-                        completion(.success(true))
-                    }
-                }
+            case .success(let objectIds):
+                completion(.success(objectIds))
             }
         }
     }
 
-    func deleteCarbEntries(_ entries: [DeletedCarbEntry], completion: @escaping (Result<Bool, Error>) -> Void) {
-        guard !entries.isEmpty else {
+    func updateCarbData(_ data: [SyncCarbObject], usingObjectIdCache objectIdCache: ObjectIdCache, completion: @escaping (Result<Bool, Error>) -> Void) {
+        guard !data.isEmpty else {
+            completion(.success(false))
+            return
+        }
+        
+        let treatments = data.compactMap { (carbEntry) -> CarbCorrectionNightscoutTreatment? in
+            if let syncIdentifier = carbEntry.syncIdentifier, let objectId = objectIdCache.findObjectIdBySyncIdentifier(syncIdentifier) {
+                return carbEntry.carbCorrectionNightscoutTreatment(withObjectId: objectId)
+            }
+            return nil
+        }
+
+        modifyTreatments(treatments) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+
+    func deleteCarbData(_ data: [SyncCarbObject], usingObjectIdCache objectIdCache: ObjectIdCache, completion: @escaping (Result<Bool, Error>) -> Void) {
+
+        let objectIds = data.compactMap { (carbEntry) -> String? in
+            if let syncIdentifier = carbEntry.syncIdentifier {
+                return objectIdCache.findObjectIdBySyncIdentifier(syncIdentifier)
+            }
+            return nil
+        }
+
+        guard !objectIds.isEmpty else {
             completion(.success(false))
             return
         }
 
-        let ids = entries.compactMap { $0.nightscoutIdentifier }
-
-        deleteTreatmentsByClientId(ids) { error in
+        deleteTreatmentsByObjectId(objectIds) { error in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -86,37 +96,34 @@ extension NightscoutUploader {
 
 extension NightscoutUploader {
 
-    func uploadDoses(_ doses: [DoseEntry], completion: @escaping (Result<Bool, Error>) -> Void) {
+    func uploadDoses(_ doses: [DoseEntry], usingObjectIdCache objectIdCache: ObjectIdCache, completion: @escaping (Result<[String], Error>) -> Void) {
         guard !doses.isEmpty else {
-            completion(.success(false))
+            completion(.success([]))
             return
         }
 
         let source = "loop://\(UIDevice.current.name)"
-        self.upload(doses.compactMap { $0.treatment(enteredBy: source) }) { (result) in
+        
+        let treatments = doses.compactMap { (dose) -> NightscoutTreatment? in
+            var objectId: String? = nil
+            
+            if let syncIdentifier = dose.syncIdentifier {
+                objectId = objectIdCache.findObjectIdBySyncIdentifier(syncIdentifier)
+            }
+            
+            return dose.treatment(enteredBy: source, withObjectId: objectId)
+        }
+        
+        
+        self.upload(treatments) { (result) in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
-            case .success:
-                completion(.success(true))
+            case .success(let objectIds):
+                completion(.success(objectIds))
             }
         }
     }
 
 }
 
-extension StoredCarbEntry {
-
-    var nightscoutIdentifier: String {
-        return externalID ?? syncIdentifier ?? sampleUUID.uuidString
-    }
-
-}
-
-extension DeletedCarbEntry {
-
-    var nightscoutIdentifier: String? {
-        return externalID ?? syncIdentifier ?? uuid?.uuidString
-    }
-
-}
