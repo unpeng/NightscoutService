@@ -180,7 +180,6 @@ class ServiceUICoordinator: UINavigationController, CompletionNotifying, UINavig
             model.didSucceed = {
                 if creatingService {
                     self.notifyServiceCreated(self.service!)
-                    self.serviceSetupDelegate?.serviceSetupNotifying(self, didCreateService: self.service!)
                 }
                 if self.initialTherapySettings.isComplete {
                     self.stepFinished()
