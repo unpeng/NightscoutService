@@ -118,7 +118,7 @@ extension StoredDosingDecision {
     
     var overrideStatus: NightscoutUploadKit.OverrideStatus {
         guard let scheduleOverride = scheduleOverride, scheduleOverride.isActive(),
-            let glucoseTargetRange = glucoseTargetRangeScheduleApplyingOverrideIfActive?.value(at: date) else
+            let glucoseTargetRange = effectiveGlucoseTargetRangeSchedule?.value(at: date) else
         {
             return NightscoutUploadKit.OverrideStatus(timestamp: date, active: false)
         }
