@@ -20,13 +20,13 @@ struct WelcomeView: View, HorizontalSizeClassOverride {
                 .font(.largeTitle)
                 .fontWeight(.semibold)
             Image(frameworkImage: "Loop", decorative: true)
-            Text("Before using Loop you need to configure a few settings. These settings should be entered with precision and care; they are ultimately what Loop uses to determine how much insulin to deliver. If you are new to Loop, work with your diabetes support team to come up with a plan for finding out what settings will work best for you.")
+            Text("Before using Loop you need to configure a few settings. These settings should be entered with precision and care; they are a critical part of how Loop determines the right amount of insulin to deliver.\n\nIf you are new to Loop, work with your diabetes support team to determine the settings that work best for you.")
                 .foregroundColor(.secondary)
             Spacer()
             Button(action: {
                 self.didContinue?()
             }) {
-                Text(LocalizedString("I'm Ready!", comment:"Button title for starting setup"))
+                Text(LocalizedString("Let's Go!", comment:"Button title for starting setup"))
                     .actionButtonStyle(.primary)
             }
         }

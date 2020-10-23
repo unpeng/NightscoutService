@@ -165,22 +165,11 @@ class ServiceUICoordinator: UINavigationController, CompletionNotifying, UINavig
             return hostedView
 
         case .login:
-            var creatingService: Bool
-            if service == nil {
-                service = NightscoutService()
-                creatingService = true
-            } else {
-                creatingService = false
-                service!.restoreCredentials()
-            }
             let model = CredentialsViewModel(service: service!)
             model.didCancel = {
                 self.completionDelegate?.completionNotifyingDidComplete(self)
             }
             model.didSucceed = {
-                if creatingService {
-                    self.notifyServiceCreated(self.service!)
-                }
                 if self.initialTherapySettings.isComplete {
                     self.stepFinished()
                 } else {
@@ -333,10 +322,6 @@ class ServiceUICoordinator: UINavigationController, CompletionNotifying, UINavig
             let nextButtonString = LocalizedString("Save Settings", comment: "Therapy settings save button title")
             let actionButton = TherapySettingsView.ActionButton(localizedString: nextButtonString) { [weak self] in
                 if let self = self {
-                    if self.service == nil {
-                        self.service = NightscoutService()
-                        self.notifyServiceCreated(self.service!)
-                    }
                     if let therapySettings = self.therapySettingsViewModel?.therapySettings {
                         self.service?.serviceDelegate?.serviceHasNewTherapySettings(therapySettings)
                     }
@@ -400,14 +385,17 @@ class ServiceUICoordinator: UINavigationController, CompletionNotifying, UINavig
     
     override func viewWillAppear(_ animated: Bool) {
         if let service = service {
-            if service.hasConfiguration {
+            if !initialTherapySettings.isComplete {
+                screenStack = [.welcome]
+            } else if service.hasConfiguration {
                 screenStack = [.status]
             } else {
                 screenStack = [.login]
             }
-        } else if initialTherapySettings.isComplete {
-            screenStack = [.login]
         } else {
+            service = NightscoutService()
+            service?.restoreCredentials()
+            notifyServiceCreated(service!)
             screenStack = [.welcome]
         }
         let viewController = viewControllerForScreen(currentScreen)
