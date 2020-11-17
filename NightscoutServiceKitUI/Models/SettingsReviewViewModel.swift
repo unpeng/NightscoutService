@@ -1,6 +1,6 @@
 //
 //  SettingsReviewViewModel.swift
-//  TidepoolServiceKitUI
+//  NightscoutServiceKitUI
 //
 //  Created by Pete Schwamb on 9/7/20.
 //  Copyright © 2020 LoopKit Authors. All rights reserved.
