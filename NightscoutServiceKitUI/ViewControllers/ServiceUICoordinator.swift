@@ -357,7 +357,7 @@ class ServiceUICoordinator: UINavigationController, CompletionNotifying, UINavig
         return TherapySettingsViewModel(
             mode: .acceptanceFlow,
             therapySettings: therapySettings,
-            glucoseUnit: preferredGlucoseUnit,
+            preferredGlucoseUnit: preferredGlucoseUnit,
             supportedInsulinModelSettings: supportedInsulinModelSettings,
             pumpSupportedIncrements: { pumpSupportedIncrements },
             syncPumpSchedule: {
