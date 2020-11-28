@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LoopKit",
+        "repositoryURL": "https://github.com/LoopKit/LoopKit.git",
+        "state": {
+          "branch": "package-experiment",
+          "revision": "4aac4319503b241517bd613fab24ac9decf7c733",
+          "version": null
+        }
+      },
+      {
+        "package": "MKRingProgressView",
+        "repositoryURL": "https://github.com/maxkonovalov/MKRingProgressView.git",
+        "state": {
+          "branch": "master",
+          "revision": "ed13bf30eb13a83f0d117d49524c15bedec13924",
+          "version": null
+        }
+      },
+      {
+        "package": "RileyLinkIOS",
+        "repositoryURL": "https://github.com/ps2/rileylink_ios.git",
+        "state": {
+          "branch": "package-experiment",
+          "revision": "196cbd4859e2ca598a38afb4cbb3d7922ca78f0b",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftCharts",
+        "repositoryURL": "https://github.com/ps2/SwiftCharts.git",
+        "state": {
+          "branch": "uikit-explicit",
+          "revision": "2919cbcec95ca45fad31262426d6008a28ca7fb5",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

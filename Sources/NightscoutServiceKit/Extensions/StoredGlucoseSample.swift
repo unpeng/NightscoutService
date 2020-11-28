@@ -8,6 +8,7 @@
 
 import LoopKit
 import NightscoutUploadKit
+import UIKit
 
 extension StoredGlucoseSample {
 

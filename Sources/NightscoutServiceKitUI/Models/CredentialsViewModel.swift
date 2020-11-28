@@ -8,6 +8,8 @@
 
 import NightscoutServiceKit
 import LoopKit
+import Combine
+import Foundation
 
 public enum CredentialsError: Error {
     case invalidUrl

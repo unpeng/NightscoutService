@@ -10,6 +10,7 @@ import Foundation
 import LoopKit
 import NightscoutUploadKit
 import HealthKit
+import UIKit
 
 extension SyncCarbObject {
 
