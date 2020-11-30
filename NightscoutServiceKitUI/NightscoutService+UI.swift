@@ -10,19 +10,28 @@ import SwiftUI
 import LoopKit
 import LoopKitUI
 import NightscoutServiceKit
+import HealthKit
 
 extension NightscoutService: ServiceUI {
-    
     public static var image: UIImage? {
-        UIImage(named: "nightscout", in: Bundle(for: NightscoutServiceTableViewController.self), compatibleWith: nil)!
+        UIImage(named: "nightscout", in: Bundle(for: ServiceUICoordinator.self), compatibleWith: nil)!
+    }
+    
+    public static var providesOnboarding: Bool { return true }
+
+    public static func setupViewController(currentTherapySettings: TherapySettings, preferredGlucoseUnit: HKUnit, chartColors: ChartColorPalette, carbTintColor: Color, glucoseTintColor: Color, guidanceColors: GuidanceColors, insulinTintColor: Color) -> (UIViewController & ServiceSetupNotifying & CompletionNotifying)? {
+        
+        return ServiceUICoordinator(service: nil, therapySettings: currentTherapySettings, preferredGlucoseUnit: preferredGlucoseUnit, chartColors: chartColors, carbTintColor: carbTintColor, glucoseTintColor: glucoseTintColor, guidanceColors: guidanceColors, insulinTintColor: insulinTintColor)
     }
 
-    public static func setupViewController() -> (UIViewController & ServiceSetupNotifying & CompletionNotifying)? {
-        return ServiceViewController(rootViewController: NightscoutServiceTableViewController(service: NightscoutService(), for: .create))
+    public func settingsViewController(currentTherapySettings: TherapySettings, preferredGlucoseUnit: HKUnit, chartColors: ChartColorPalette, carbTintColor: Color, glucoseTintColor: Color, guidanceColors: GuidanceColors, insulinTintColor: Color) -> (UIViewController & ServiceSettingsNotifying & CompletionNotifying) {
+        return ServiceUICoordinator(service: self, therapySettings: currentTherapySettings, preferredGlucoseUnit: preferredGlucoseUnit, chartColors: chartColors, carbTintColor: carbTintColor, glucoseTintColor: glucoseTintColor, guidanceColors: guidanceColors, insulinTintColor: insulinTintColor)
     }
 
-    public func settingsViewController(chartColors: ChartColorPalette, carbTintColor: Color, glucoseTintColor: Color, guidanceColors: GuidanceColors, insulinTintColor: Color) -> (UIViewController & ServiceSettingsNotifying & CompletionNotifying) {
-      return ServiceViewController(rootViewController: NightscoutServiceTableViewController(service: self, for: .update))
+    public func supportMenuItem(supportInfoProvider: SupportInfoProvider, urlHandler: @escaping (URL) -> Void) -> AnyView? {
+        return AnyView(Button("Submit Bug Report", action: {
+            let url = URL(string: "https://github.com/LoopKit/Loop/issues")!
+            urlHandler(url)
+        }))
     }
-
 }
