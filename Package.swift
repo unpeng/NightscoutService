@@ -22,7 +22,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "NightscoutServiceKit",
-            dependencies: [ "LoopKit" ],
+            dependencies: [
+                .product(name: "NightscoutUploadKit", package: "RileyLinkIOS"),
+                "LoopKit"
+            ],
             exclude: ["Info.plist"]
         ),
         .target(
