@@ -28,6 +28,7 @@ let package = Package(
         .target(
             name: "NightscoutServiceKitUI",
             dependencies: [
+                "NightscoutServiceKit",
                 .product(name: "NightscoutUploadKit", package: "RileyLinkIOS"),
                 "LoopKit",
                 .product(name: "LoopKitUI", package: "LoopKit")

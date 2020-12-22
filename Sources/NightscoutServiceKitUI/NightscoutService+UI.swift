@@ -14,7 +14,7 @@ import HealthKit
 
 extension NightscoutService: ServiceUI {
     public static var image: UIImage? {
-        UIImage(named: "nightscout", in: Bundle(for: ServiceUICoordinator.self), compatibleWith: nil)!
+        UIImage(named: "nightscout", in: Bundle.module, compatibleWith: nil)!
     }
     
     public static var providesOnboarding: Bool { return true }
