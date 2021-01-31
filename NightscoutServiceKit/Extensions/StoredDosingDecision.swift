@@ -34,13 +34,23 @@ extension StoredDosingDecision {
         return PredictedBG(startDate: startDate, values: predictedGlucose.map { $0.quantity })
     }
     
-    var loopStatusRecommendedTempBasal: RecommendedTempBasal? {
-        guard let recommendedTempBasal = recommendedTempBasal else {
+    var loopStatusAutomaticDoseRecommendation: NightscoutUploadKit.AutomaticDoseRecommendation? {
+        guard let automaticDoseRecommendation = automaticDoseRecommendation else {
             return nil
         }
-        return RecommendedTempBasal(timestamp: recommendedTempBasal.date,
-                                    rate: recommendedTempBasal.recommendation.unitsPerHour,
-                                    duration: recommendedTempBasal.recommendation.duration)
+        
+        let nightscoutTempBasalAdjustment: TempBasalAdjustment?
+        
+        if let basalAdjustment = automaticDoseRecommendation.recommendation.basalAdjustment {
+            nightscoutTempBasalAdjustment = TempBasalAdjustment(rate: basalAdjustment.unitsPerHour, duration: basalAdjustment.duration)
+        } else {
+            nightscoutTempBasalAdjustment = nil
+        }
+        
+        return NightscoutUploadKit.AutomaticDoseRecommendation(
+            timestamp: automaticDoseRecommendation.date,
+            tempBasalAdjustment: nightscoutTempBasalAdjustment,
+            bolusVolume: automaticDoseRecommendation.recommendation.bolusUnits)
     }
 
     var loopStatusRecommendedBolus: Double? {
@@ -72,7 +82,7 @@ extension StoredDosingDecision {
                           iob: loopStatusIOB,
                           cob: loopStatusCOB,
                           predicted: loopStatusPredicted,
-                          recommendedTempBasal: loopStatusRecommendedTempBasal,
+                          automaticDoseRecommendation: loopStatusAutomaticDoseRecommendation,
                           recommendedBolus: loopStatusRecommendedBolus,
                           enacted: loopStatusEnacted,
                           failureReason: loopStatusFailureReason)
