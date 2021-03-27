@@ -137,7 +137,7 @@ extension StoredDosingDecision {
         let lowerTarget = HKQuantity(unit: unit, doubleValue: glucoseTargetRange.minValue)
         let upperTarget = HKQuantity(unit: unit, doubleValue: glucoseTargetRange.maxValue)
         let currentCorrectionRange = CorrectionRange(minValue: lowerTarget, maxValue: upperTarget)
-        let duration = scheduleOverride.duration != .indefinite ? round(scheduleOverride.scheduledEndDate.timeIntervalSince(date)): nil
+        let duration = scheduleOverride.duration != .indefinite ? round(scheduleOverride.actualEndDate.timeIntervalSince(date)): nil
         
         return NightscoutUploadKit.OverrideStatus(name: scheduleOverride.context.name,
                                                   timestamp: date,
