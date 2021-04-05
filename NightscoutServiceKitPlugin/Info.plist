@@ -22,5 +22,9 @@
 	<string>Nightscout Service</string>
 	<key>com.loopkit.Loop.ServiceIdentifier</key>
 	<string>NightscoutService</string>
+	<key>PluginDependencies</key>
+	<array>
+		<string>NightscoutUploadKit</string>
+	</array>
 </dict>
 </plist>

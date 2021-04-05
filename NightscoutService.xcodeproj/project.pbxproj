@@ -116,7 +116,7 @@
 		A94DA7632353CF930082E26D /* StoredGlucoseSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredGlucoseSample.swift; sourceTree = "<group>"; };
 		A993990222BC7095005E39D3 /* NightscoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutService.swift; sourceTree = "<group>"; };
 		A993990422BC70B7005E39D3 /* NightscoutService+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NightscoutService+UI.swift"; sourceTree = "<group>"; };
-		A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.loopplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightscoutServiceKitPlugin.loopplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightscoutServiceKitPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99C713323396CB100AB9035 /* NightscoutServiceKitPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NightscoutServiceKitPlugin.h; sourceTree = "<group>"; };
 		A99C713423396CB100AB9035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99C714123396D8E00AB9035 /* NightscoutServiceKitPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutServiceKitPlugin.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 				A91BAC2422BC691A00ABF1BB /* NightscoutServiceKitTests.xctest */,
 				A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */,
 				A91BAC4222BC69B500ABF1BB /* NightscoutServiceKitUITests.xctest */,
-				A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.loopplugin */,
+				A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -493,7 +493,7 @@
 			);
 			name = NightscoutServiceKitPlugin;
 			productName = NightscoutServiceKitPlugin;
-			productReference = A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.loopplugin */;
+			productReference = A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1222,7 +1222,6 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = loopplugin;
 			};
 			name = Debug;
 		};
@@ -1249,7 +1248,6 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = loopplugin;
 			};
 			name = Release;
 		};
