@@ -1,4 +1,4 @@
-github "LoopKit/LoopKit" "ac51fc2f4c18170fafa0bb0ea3c69e2964247cd7"
+github "LoopKit/LoopKit" "268b0ce6cbc6434c2b054ca2daa48d411c6606dd"
 github "LoopKit/MKRingProgressView" "f548a5c64832be2d37d7c91b5800e284887a2a0a"
 github "i-schuetz/SwiftCharts" "0.6.5"
-github "ps2/rileylink_ios" "c34bf40c3579b7550779a505a6aa434fde4675fb"
+github "ps2/rileylink_ios" "0b414f524858b2c0a6770c9bc6e75e94fdfa59f3"
