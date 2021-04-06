@@ -34,6 +34,20 @@
                ReferencedContainer = "container:NightscoutService.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A99C713023396CB100AB9035"
+               BuildableName = "NightscoutServiceKitPlugin.framework"
+               BlueprintName = "NightscoutServiceKitPlugin"
+               ReferencedContainer = "container:NightscoutService.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
