@@ -24,6 +24,7 @@
 	<string>NightscoutService</string>
 	<key>PluginDependencies</key>
 	<array>
+		<string>Crypto</string>
 		<string>NightscoutServiceKit</string>
 		<string>NightscoutServiceKitUI</string>
 		<string>NightscoutUploadKit</string>
