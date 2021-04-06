@@ -483,7 +483,6 @@
 				A99C712D23396CB100AB9035 /* Sources */,
 				A99C712E23396CB100AB9035 /* Frameworks */,
 				A99C712F23396CB100AB9035 /* Resources */,
-				A99C713D23396D0300AB9035 /* Copy Frameworks with Carthage */,
 			);
 			buildRules = (
 			);
@@ -641,28 +640,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "CARTHAGE_BUILD_DIR=\"${SRCROOT}/Carthage/Build\"\nif [ -n \"${IPHONEOS_DEPLOYMENT_TARGET}\" ]; then\n    CARTHAGE_BUILD_DIR=\"${CARTHAGE_BUILD_DIR}/iOS\"\nelif [ -n \"${WATCHOS_DEPLOYMENT_TARGET}\" ]; then\n    CARTHAGE_BUILD_DIR=\"${CARTHAGE_BUILD_DIR}/watchOS\"\nelse\n    echo \"ERROR: Unexpected deployment target type\"\n    exit 1\nfi\n\nfor SCRIPT_INPUT_FILE in ${!SCRIPT_INPUT_FILE_*}; do\n    CARTHAGE_BUILD_FILE=\"${!SCRIPT_INPUT_FILE/${BUILT_PRODUCTS_DIR}/${CARTHAGE_BUILD_DIR}}\"\n    if [ -e \"${CARTHAGE_BUILD_FILE}\" ]; then\n        if [ -e \"${SCRIPT_INPUT_FILE}\" ]; then\n            echo \"ERROR: Duplicate frameworks found at:\"\n            echo \"  ${SCRIPT_INPUT_FILE}\"\n            echo \"  ${CARTHAGE_BUILD_FILE}\"\n            exit 1\n        fi\n        echo \"Substituting \\\"${CARTHAGE_BUILD_FILE}\\\" for \\\"${!SCRIPT_INPUT_FILE}\\\"\"\n        export ${SCRIPT_INPUT_FILE}=\"${CARTHAGE_BUILD_FILE}\"\n    fi\ndone\n\necho \"Copy Frameworks with Carthage\"\ncarthage copy-frameworks\n";
-		};
-		A99C713D23396D0300AB9035 /* Copy Frameworks with Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/NightscoutServiceKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/NightscoutServiceKitUI.framework",
-				"$(BUILT_PRODUCTS_DIR)/NightscoutUploadKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/Crypto.framework",
-			);
-			name = "Copy Frameworks with Carthage";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/Scripts/copy-frameworks.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
