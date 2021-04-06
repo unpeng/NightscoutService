@@ -25,6 +25,7 @@
 	<key>PluginDependencies</key>
 	<array>
 		<string>NightscoutServiceKit</string>
+		<string>NightscoutServiceKitUI</string>
 		<string>NightscoutUploadKit</string>
 	</array>
 </dict>
