@@ -6,6 +6,8 @@
 //  Copyright © 2020 LoopKit Authors. All rights reserved.
 //
 
+import Foundation
+import Combine
 import NightscoutServiceKit
 import LoopKit
 

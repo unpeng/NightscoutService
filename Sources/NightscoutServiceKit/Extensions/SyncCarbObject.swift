@@ -6,6 +6,7 @@
 //  Copyright © 2019 LoopKit Authors. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import LoopKit
 import NightscoutUploadKit
