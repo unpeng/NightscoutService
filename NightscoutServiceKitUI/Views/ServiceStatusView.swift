@@ -11,7 +11,7 @@ import LoopKitUI
 import NightscoutServiceKit
 
 struct ServiceStatusView: View, HorizontalSizeClassOverride {
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismissAction) private var dismiss
 
     @ObservedObject var viewModel: ServiceStatusViewModel
     
