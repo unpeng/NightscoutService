@@ -25,20 +25,23 @@ struct ServiceStatusView: View, HorizontalSizeClassOverride {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 150)
             
-            List {
-                Section {
-                    HStack {
-                        Text("URL")
-                        Spacer()
-                        Text(viewModel.urlString)
-                    }
-                    HStack {
-                        Text("Status")
-                        Spacer()
-                        Text(String(describing: viewModel.status))
-                    }
+            VStack(spacing: 0) {
+                HStack {
+                    Text("URL")
+                    Spacer()
+                    Text(viewModel.urlString)
                 }
+                .padding()
+                Divider()
+                HStack {
+                    Text("Status")
+                    Spacer()
+                    Text(String(describing: viewModel.status))
+                }
+                .padding()
             }
+            .background(Color(UIColor.secondarySystemBackground))
+            .cornerRadius(10)
             
             Button(action: {
                 viewModel.didLogout?()
