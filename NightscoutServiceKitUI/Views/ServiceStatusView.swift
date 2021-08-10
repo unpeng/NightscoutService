@@ -26,27 +26,32 @@ struct ServiceStatusView: View, HorizontalSizeClassOverride {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 150)
             
-            List {
-                Section {
+
+            VStack(spacing: 0) {
+                HStack {
+                    Text("URL")
+                    Spacer()
+                    Text(viewModel.urlString)
+                }
+                .padding()
+                Divider()
+                HStack {
+                    Text("Status")
+                    Spacer()
+                    Text(String(describing: viewModel.status))
+                }
+                .padding()
+                NavigationLink(destination: OTPSelectionView(otpViewModel: otpViewModel), tag: "otp-view", selection: $selectedItem) {
                     HStack {
-                        Text("URL")
+                        Text("One-Time Password")
                         Spacer()
-                        Text(viewModel.urlString)
-                    }
-                    HStack {
-                        Text("Status")
-                        Spacer()
-                        Text(String(describing: viewModel.status))
-                    }
-                    NavigationLink(destination: OTPSelectionView(otpViewModel: otpViewModel), tag: "otp-view", selection: $selectedItem) {
-                        HStack {
-                            Text("One-Time Password")
-                            Spacer()
-                            Text(otpViewModel.otpCode)
-                        }
+                        Text(otpViewModel.otpCode)
                     }
                 }
-            }.refreshOnAppear(selection: $selectedItem) // Hack for https://stackoverflow.com/questions/63934037/swiftui-navigationlink-cell-in-a-form-stays-highlighted-after-detail-pop
+                .padding()
+            }
+            .background(Color(UIColor.secondarySystemBackground))
+            .cornerRadius(10)
             
             Button(action: {
                 viewModel.didLogout?()
