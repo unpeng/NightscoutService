@@ -21,7 +21,7 @@ struct OTPSelectionView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.all)
-            Text(otpViewModel.created).bold()
+            Text(otpViewModel.tokenName).bold()
         }
         .navigationBarItems(trailing: refreshButton)
     }

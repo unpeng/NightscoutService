@@ -13,8 +13,8 @@ import SwiftUI
 class OTPViewModel: ObservableObject {
     
     @Published var otpCode: String = ""
-    @Published var created: String = ""
-    @Published var qrImage: Image?
+    @Published var tokenName: String = ""
+    @Published var qrImage: Image? = nil
     
     private var timer: Timer? = nil
     private var otpManager: OTPManager
@@ -33,9 +33,11 @@ class OTPViewModel: ObservableObject {
     }
     
     private func refreshCurrentOTP() {
-        self.otpCode = otpManager.otp()
-        self.created = otpManager.created
-        self.qrImage = createQRImage(otpURL: otpManager.otpURL)
+        self.otpCode = otpManager.currentPassword() ?? ""
+        self.tokenName = otpManager.tokenName() ?? ""
+        if let url = otpManager.otpURL {
+            self.qrImage = createQRImage(otpURL: url)
+        }
     }
     
     private func createQRImage(otpURL: String) -> Image? {

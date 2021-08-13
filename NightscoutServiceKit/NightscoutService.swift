@@ -52,7 +52,7 @@ public final class NightscoutService: Service {
     public init() {
         self.isOnboarded = false
         self.lockedObjectIdCache = Locked(ObjectIdCache())
-        self.otpManager = OTPManager()
+        self.otpManager = OTPManager(secretStore: KeychainManager())
     }
 
     public required init?(rawState: RawStateValue) {
@@ -66,7 +66,7 @@ public final class NightscoutService: Service {
             self.lockedObjectIdCache = Locked(ObjectIdCache())
         }
         
-        self.otpManager = OTPManager()
+        self.otpManager = OTPManager(secretStore: KeychainManager())
         
         restoreCredentials()
     }
@@ -238,14 +238,11 @@ extension NightscoutService: RemoteDataService {
     }
     
     public func validatePushNotificationSource(_ notification: [String: AnyObject]) -> Bool {
-        
-        let otpCurrent = otpManager.otp()
-        
         guard let otpToValidate = notification["otp"] as? String else {
             return false
         }
 
-        return otpToValidate.count == 6 && otpToValidate == otpCurrent;
+        return otpManager.validateOTP(otpToValidate: otpToValidate)
     }
     
 }
