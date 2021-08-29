@@ -21,9 +21,17 @@ public final class NightscoutService: Service {
 
     public weak var serviceDelegate: ServiceDelegate?
 
-    public var siteURL: URL?
+    public var siteURL: URL? {
+        didSet {
+            updateUploader()
+        }
+    }
 
-    public var apiSecret: String?
+    public var apiSecret: String? {
+        didSet {
+            updateUploader()
+        }
+    }
     
     public var isOnboarded: Bool
 
@@ -40,12 +48,7 @@ public final class NightscoutService: Service {
     }
     private let lockedObjectIdCache: Locked<ObjectIdCache>
 
-    private lazy var uploader: NightscoutUploader? = {
-        guard let siteURL = siteURL, let apiSecret = apiSecret else {
-            return nil
-        }
-        return NightscoutUploader(siteURL: siteURL, APISecret: apiSecret)
-    }()
+    private var uploader: NightscoutUploader? = nil
 
     private let log = OSLog(category: "NightscoutService")
 
@@ -125,6 +128,14 @@ public final class NightscoutService: Service {
         siteURL = nil
         apiSecret = nil
         try? KeychainManager().setNightscoutCredentials()
+    }
+    
+    private func updateUploader() {
+        if let siteURL = siteURL, let apiSecret = apiSecret, uploader == nil {
+            uploader = NightscoutUploader(siteURL: siteURL, APISecret: apiSecret)
+        } else if (siteURL == nil || apiSecret == nil) && uploader != nil {
+            uploader = nil
+        }
     }
     
 }
