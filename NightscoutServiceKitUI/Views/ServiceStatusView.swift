@@ -26,29 +26,34 @@ struct ServiceStatusView: View, HorizontalSizeClassOverride {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 150)
             
-            
-            List {
-                Section {
-                    HStack {
-                        Text("URL")
-                        Spacer()
-                        Text(viewModel.urlString)
-                    }
-                    HStack {
-                        Text("Status")
-                        Spacer()
-                        Text(String(describing: viewModel.status))
-                    }
-                    NavigationLink(destination: OTPSelectionView(otpViewModel: otpViewModel), tag: "otp-view", selection: $selectedItem) {
-                        HStack {
-                            Text("One-Time Password")
-                            Spacer()
-                            Text(otpViewModel.otpCode)
-                        }
-                    }
+
+            VStack(spacing: 0) {
+                HStack {
+                    Text("URL")
+                    Spacer()
+                    Text(viewModel.urlString)
                 }
-            }.refreshOnAppear(selection: $selectedItem)
-            .insetGroupedListStyle()
+                .padding()
+                Divider()
+                HStack {
+                    Text("Status")
+                    Spacer()
+                    Text(String(describing: viewModel.status))
+                }
+                .padding()
+                NavigationLink(destination: OTPSelectionView(otpViewModel: otpViewModel), tag: "otp-view", selection: $selectedItem) {
+                    HStack {
+                        Text("One-Time Password")
+                        Spacer()
+                        Text(otpViewModel.otpCode)
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                    }
+                }.foregroundColor(Color.primary)
+                .padding()
+            }
+            .background(Color(UIColor.secondarySystemBackground))
+            .cornerRadius(10)
             
             Button(action: {
                 viewModel.didLogout?()
@@ -65,27 +70,5 @@ struct ServiceStatusView: View, HorizontalSizeClassOverride {
         Button(action: dismiss) {
             Text("Done").bold()
         }
-    }
-}
-
-struct RefreshOnAppearModifier<Tag: Hashable>: ViewModifier {
-    @State private var viewId = UUID()
-    @Binding var selection: Tag?
-    
-    func body(content: Content) -> some View {
-        content
-            .id(viewId)
-            .onAppear {
-                if selection != nil {
-                    viewId = UUID()
-                    selection = nil
-                }
-            }
-    }
-}
-
-extension View {
-    func refreshOnAppear<Tag: Hashable>(selection: Binding<Tag?>? = nil) -> some View {
-        modifier(RefreshOnAppearModifier(selection: selection ?? .constant(nil)))
     }
 }
