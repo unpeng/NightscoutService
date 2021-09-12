@@ -41,6 +41,7 @@ struct ServiceStatusView: View, HorizontalSizeClassOverride {
                     Text(String(describing: viewModel.status))
                 }
                 .padding()
+                Divider()
                 NavigationLink(destination: OTPSelectionView(otpViewModel: otpViewModel), tag: "otp-view", selection: $selectedItem) {
                     HStack {
                         Text("One-Time Password")
