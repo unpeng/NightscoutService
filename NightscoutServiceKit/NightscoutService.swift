@@ -11,6 +11,12 @@ import HealthKit
 import LoopKit
 import NightscoutUploadKit
 
+public enum NightscoutServiceError: Error {
+    case incompatibleTherapySettings
+    case missingCredentials
+}
+
+
 public final class NightscoutService: Service {
 
     public static let serviceIdentifier = "NightscoutService"
@@ -38,12 +44,17 @@ public final class NightscoutService: Service {
     }
     private let lockedObjectIdCache: Locked<ObjectIdCache>
 
-    private lazy var uploader: NightscoutUploader? = {
-        guard let siteURL = siteURL, let apiSecret = apiSecret else {
-            return nil
+    private var _uploader: NightscoutUploader?
+
+    private var uploader: NightscoutUploader? {
+        if _uploader == nil {
+            guard let siteURL = siteURL, let apiSecret = apiSecret else {
+                return nil
+            }
+            _uploader = NightscoutUploader(siteURL: siteURL, APISecret: apiSecret)
         }
-        return NightscoutUploader(siteURL: siteURL, APISecret: apiSecret)
-    }()
+        return _uploader
+    }
 
     private let log = OSLog(category: "NightscoutService")
 
@@ -77,6 +88,7 @@ public final class NightscoutService: Service {
 
     public func verifyConfiguration(completion: @escaping (Error?) -> Void) {
         guard hasConfiguration, let siteURL = siteURL, let apiSecret = apiSecret else {
+            completion(NightscoutServiceError.missingCredentials)
             return
         }
 
@@ -230,6 +242,27 @@ extension NightscoutService: RemoteDataService {
         }
 
         uploader.uploadProfiles(stored.compactMap { $0.profileSet }, completion: completion)
+    }
+
+    public func fetchStoredTherapySettings(completion: @escaping (Result<(TherapySettings,Date), Error>) -> Void) {
+        guard let uploader = uploader else {
+            completion(.failure(NightscoutServiceError.missingCredentials))
+            return
+        }
+
+        uploader.fetchCurrentProfile(completion: { result in
+            switch result {
+            case .success(let profileSet):
+                if let therapySettings = profileSet.therapySettings {
+                    completion(.success((therapySettings,profileSet.startDate)))
+                } else {
+                    completion(.failure(NightscoutServiceError.incompatibleTherapySettings))
+                }
+                break
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        })
     }
 
 }
