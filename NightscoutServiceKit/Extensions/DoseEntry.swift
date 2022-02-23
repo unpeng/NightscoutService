@@ -21,7 +21,7 @@ extension DoseEntry {
             return BolusNightscoutTreatment(
                 timestamp: startDate,
                 enteredBy: source,
-                bolusType: duration > 0 ? .Square : .Normal,
+                bolusType: duration >= TimeInterval(minutes: 30) ? .Square : .Normal,
                 amount: deliveredUnits ?? programmedUnits,
                 programmed: programmedUnits,  // Persisted pump events are always completed
                 unabsorbed: 0,  // The pump's reported IOB isn't relevant, nor stored
