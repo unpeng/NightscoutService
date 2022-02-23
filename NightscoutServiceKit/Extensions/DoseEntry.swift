@@ -26,6 +26,7 @@ extension DoseEntry {
                 programmed: programmedUnits,  // Persisted pump events are always completed
                 unabsorbed: 0,  // The pump's reported IOB isn't relevant, nor stored
                 duration: duration,
+                automatic: automatic ?? false,
                 /* id: objectId, */ /// Specifying _id only works when doing a put (modify); all dose uploads are currently posting so they can be either create or update
                 syncIdentifier: syncIdentifier
             )
