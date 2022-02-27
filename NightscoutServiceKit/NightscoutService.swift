@@ -11,6 +11,12 @@ import HealthKit
 import LoopKit
 import NightscoutUploadKit
 
+public enum NightscoutServiceError: Error {
+    case incompatibleTherapySettings
+    case missingCredentials
+}
+
+
 public final class NightscoutService: Service {
 
     public static let serviceIdentifier = "NightscoutService"
@@ -21,17 +27,9 @@ public final class NightscoutService: Service {
 
     public weak var serviceDelegate: ServiceDelegate?
 
-    public var siteURL: URL? {
-        didSet {
-            updateUploader()
-        }
-    }
+    public var siteURL: URL?
 
-    public var apiSecret: String? {
-        didSet {
-            updateUploader()
-        }
-    }
+    public var apiSecret: String?
     
     public var isOnboarded: Bool
 
@@ -48,7 +46,17 @@ public final class NightscoutService: Service {
     }
     private let lockedObjectIdCache: Locked<ObjectIdCache>
 
-    private var uploader: NightscoutUploader? = nil
+    private var _uploader: NightscoutUploader?
+
+    private var uploader: NightscoutUploader? {
+        if _uploader == nil {
+            guard let siteURL = siteURL, let apiSecret = apiSecret else {
+                return nil
+            }
+            _uploader = NightscoutUploader(siteURL: siteURL, APISecret: apiSecret)
+        }
+        return _uploader
+    }
 
     private let log = OSLog(category: "NightscoutService")
 
@@ -85,6 +93,7 @@ public final class NightscoutService: Service {
 
     public func verifyConfiguration(completion: @escaping (Error?) -> Void) {
         guard hasConfiguration, let siteURL = siteURL, let apiSecret = apiSecret else {
+            completion(NightscoutServiceError.missingCredentials)
             return
         }
 
@@ -128,14 +137,6 @@ public final class NightscoutService: Service {
         siteURL = nil
         apiSecret = nil
         try? KeychainManager().setNightscoutCredentials()
-    }
-    
-    private func updateUploader() {
-        if let siteURL = siteURL, let apiSecret = apiSecret, uploader == nil {
-            uploader = NightscoutUploader(siteURL: siteURL, APISecret: apiSecret)
-        } else if (siteURL == nil || apiSecret == nil) && uploader != nil {
-            uploader = nil
-        }
     }
     
 }
@@ -256,6 +257,27 @@ extension NightscoutService: RemoteDataService {
         return otpManager.validateOTP(otpToValidate: otpToValidate)
     }
     
+    public func fetchStoredTherapySettings(completion: @escaping (Result<(TherapySettings,Date), Error>) -> Void) {
+        guard let uploader = uploader else {
+            completion(.failure(NightscoutServiceError.missingCredentials))
+            return
+        }
+
+        uploader.fetchCurrentProfile(completion: { result in
+            switch result {
+            case .success(let profileSet):
+                if let therapySettings = profileSet.therapySettings {
+                    completion(.success((therapySettings,profileSet.startDate)))
+                } else {
+                    completion(.failure(NightscoutServiceError.incompatibleTherapySettings))
+                }
+                break
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        })
+    }
+
 }
 
 extension KeychainManager {

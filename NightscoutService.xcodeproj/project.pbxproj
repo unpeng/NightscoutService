@@ -57,6 +57,8 @@
 		A9F9ADED263F0F71005C6C48 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9ADEC263F0F71005C6C48 /* OTPViewModel.swift */; };
 		C102014D2526C1BA003B6FB7 /* ServiceStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C102014C2526C1BA003B6FB7 /* ServiceStatusViewModel.swift */; };
 		C10201552526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10201542526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift */; };
+		C1398D2027C41E3D00416AD6 /* ProfileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */; };
+		C1398D2227C434FB00416AD6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1398D2127C434FB00416AD6 /* Data.swift */; };
 		C1E703642506BE9400DAB534 /* ObjectIdCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E703632506BE9400DAB534 /* ObjectIdCache.swift */; };
 		C1E7036625070A0E00DAB534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1E7036525070A0E00DAB534 /* Assets.xcassets */; };
 		C1E7036C25070D3200DAB534 /* ServiceUICoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7036B25070D3200DAB534 /* ServiceUICoordinator.swift */; };
@@ -171,6 +173,8 @@
 		A9F9ADEC263F0F71005C6C48 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		C102014C2526C1BA003B6FB7 /* ServiceStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStatusViewModel.swift; sourceTree = "<group>"; };
 		C10201542526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NightscoutService+ServiceStatusViewModelDelegate.swift"; sourceTree = "<group>"; };
+		C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSet.swift; sourceTree = "<group>"; };
+		C1398D2127C434FB00416AD6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		C1E703632506BE9400DAB534 /* ObjectIdCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectIdCache.swift; sourceTree = "<group>"; };
 		C1E7036525070A0E00DAB534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1E7036B25070D3200DAB534 /* ServiceUICoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceUICoordinator.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 				A90E39A222BC782C0016DFE8 /* SyncCarbObject.swift */,
 				A934B6192358F5FC00949C8B /* TemporaryScheduleOverride.swift */,
 				A90E399D22BC76DB0016DFE8 /* TimeInterval.swift */,
+				C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 			children = (
 				A90E39A822BC7AD10016DFE8 /* Bundle.swift */,
 				A9C62DA32331CAD400535612 /* OSLog.swift */,
+				C1398D2127C434FB00416AD6 /* Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -701,7 +707,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/Scripts/copy-frameworks.sh\n";
+			shellScript = "\"${SRCROOT}/Scripts/copy-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -718,11 +724,13 @@
 				A915719E23329845005429E1 /* DiagnosticLog+Subsystem.swift in Sources */,
 				A94DA7642353CF930082E26D /* StoredGlucoseSample.swift in Sources */,
 				C1E703642506BE9400DAB534 /* ObjectIdCache.swift in Sources */,
+				C1398D2027C41E3D00416AD6 /* ProfileSet.swift in Sources */,
 				A90E39A722BC7A360016DFE8 /* HKUnit.swift in Sources */,
 				A9246B2526231B3A00CCDCB3 /* OTPManager.swift in Sources */,
 				A90E399E22BC76DB0016DFE8 /* TimeInterval.swift in Sources */,
 				A90E39A122BC773A0016DFE8 /* NightscoutUploader.swift in Sources */,
 				A9B007B322BD6FF7000131DE /* LocalizedString.swift in Sources */,
+				C1398D2227C434FB00416AD6 /* Data.swift in Sources */,
 				A90E39A522BC791E0016DFE8 /* DoseEntry.swift in Sources */,
 				A934B6182358F49300949C8B /* StoredSettings.swift in Sources */,
 				A9C62DA42331CAD400535612 /* OSLog.swift in Sources */,
