@@ -159,6 +159,7 @@ extension NightscoutService: RemoteDataService {
                     switch result {
                     case .failure(let error):
                         self.log.error("Failed to upload overrides %{public}@: %{public}@", String(describing: updates.map {$0.dictionaryRepresentation}), String(describing: error))
+                        completion(.failure(error))
                     case .success:
                         self.log.debug("Uploaded overrides %@", String(describing: updates.map {$0.dictionaryRepresentation}))
                         completion(.success(true))
