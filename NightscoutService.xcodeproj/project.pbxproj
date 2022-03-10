@@ -67,6 +67,7 @@
 		C1E703932507193400DAB534 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E703922507193400DAB534 /* Image.swift */; };
 		C1E70395250725AA00DAB534 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E70394250725AA00DAB534 /* KeyboardObserver.swift */; };
 		C1EBB08A252596EA000D9680 /* ServiceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB089252596EA000D9680 /* ServiceStatusView.swift */; };
+		C1F7822827CD57A100C0919A /* OverrideTreament.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7822727CD57A100C0919A /* OverrideTreament.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		C1E703922507193400DAB534 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		C1E70394250725AA00DAB534 /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		C1EBB089252596EA000D9680 /* ServiceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStatusView.swift; sourceTree = "<group>"; };
+		C1F7822727CD57A100C0919A /* OverrideTreament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverrideTreament.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				A934B6192358F5FC00949C8B /* TemporaryScheduleOverride.swift */,
 				A90E399D22BC76DB0016DFE8 /* TimeInterval.swift */,
 				C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */,
+				C1F7822727CD57A100C0919A /* OverrideTreament.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				A90E39A522BC791E0016DFE8 /* DoseEntry.swift in Sources */,
 				A934B6182358F49300949C8B /* StoredSettings.swift in Sources */,
 				A9C62DA42331CAD400535612 /* OSLog.swift in Sources */,
+				C1F7822827CD57A100C0919A /* OverrideTreament.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

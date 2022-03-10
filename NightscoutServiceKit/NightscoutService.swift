@@ -143,6 +143,38 @@ public final class NightscoutService: Service {
 
 extension NightscoutService: RemoteDataService {
 
+    public func uploadTemporaryOverrideData(updated: [LoopKit.TemporaryScheduleOverride], deleted: [LoopKit.TemporaryScheduleOverride], completion: @escaping (Result<Bool, Error>) -> Void) {
+        guard let uploader = uploader else {
+            completion(.success(true))
+            return
+        }
+
+        let updates = updated.map { OverrideTreatment(override: $0) }
+
+        let deletions = deleted.map { $0.syncIdentifier.uuidString }
+
+        uploader.deleteTreatmentsById(deletions, completionHandler: { (error) in
+            if let error = error {
+                self.log.error("Overrides deletions failed to delete %{public}@: %{public}@", String(describing: deletions), String(describing: error))
+            } else {
+                if deletions.count > 0 {
+                    self.log.debug("Deleted ids: %@", deletions)
+                }
+                uploader.upload(updates) { (result) in
+                    switch result {
+                    case .failure(let error):
+                        self.log.error("Failed to upload overrides %{public}@: %{public}@", String(describing: updates.map {$0.dictionaryRepresentation}), String(describing: error))
+                        completion(.failure(error))
+                    case .success:
+                        self.log.debug("Uploaded overrides %@", String(describing: updates.map {$0.dictionaryRepresentation}))
+                        completion(.success(true))
+                    }
+                }
+            }
+        })
+    }
+
+
     public var carbDataLimit: Int? { return 1000 }
 
     public func uploadCarbData(created: [SyncCarbObject], updated: [SyncCarbObject], deleted: [SyncCarbObject], completion: @escaping (Result<Bool, Error>) -> Void) {
