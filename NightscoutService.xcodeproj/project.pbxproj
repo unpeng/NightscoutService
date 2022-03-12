@@ -45,6 +45,7 @@
 		A9F9ADED263F0F71005C6C48 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9ADEC263F0F71005C6C48 /* OTPViewModel.swift */; };
 		C102014D2526C1BA003B6FB7 /* ServiceStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C102014C2526C1BA003B6FB7 /* ServiceStatusViewModel.swift */; };
 		C10201552526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10201542526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift */; };
+		C130B6F827DD4CD000173048 /* NightscoutUploadKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */; };
 		C1398D2027C41E3D00416AD6 /* ProfileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */; };
 		C1398D2227C434FB00416AD6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1398D2127C434FB00416AD6 /* Data.swift */; };
 		C1B258AF27DD2E9E00906EEB /* OneTimePassword in Frameworks */ = {isa = PBXBuildFile; productRef = C1B258AE27DD2E9E00906EEB /* OneTimePassword */; };
@@ -186,6 +187,7 @@
 		A9F9ADEC263F0F71005C6C48 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		C102014C2526C1BA003B6FB7 /* ServiceStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStatusViewModel.swift; sourceTree = "<group>"; };
 		C10201542526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NightscoutService+ServiceStatusViewModelDelegate.swift"; sourceTree = "<group>"; };
+		C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NightscoutUploadKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSet.swift; sourceTree = "<group>"; };
 		C1398D2127C434FB00416AD6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		C1C1349527DD35060097B5AD /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +212,7 @@
 				C1C1349627DD35060097B5AD /* LoopKit.framework in Frameworks */,
 				C1C1348927DD31AA0097B5AD /* Base32 in Frameworks */,
 				C1B258AF27DD2E9E00906EEB /* OneTimePassword in Frameworks */,
+				C130B6F827DD4CD000173048 /* NightscoutUploadKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +351,7 @@
 		A91BAC5522BC6D9900ABF1BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */,
 				C1C1349727DD35260097B5AD /* LoopKitUI.framework */,
 				C1C1349527DD35060097B5AD /* LoopKit.framework */,
 			);
