@@ -13,20 +13,12 @@
 		A90E39A522BC791E0016DFE8 /* DoseEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E39A422BC791E0016DFE8 /* DoseEntry.swift */; };
 		A90E39A722BC7A360016DFE8 /* HKUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E39A622BC7A360016DFE8 /* HKUnit.swift */; };
 		A90E39A922BC7AD10016DFE8 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E39A822BC7AD10016DFE8 /* Bundle.swift */; };
-		A9122E8426D1503700CDF0F5 /* Base32.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9122E8326D1503700CDF0F5 /* Base32.framework */; platformFilter = ios; };
 		A915719E23329845005429E1 /* DiagnosticLog+Subsystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915719D23329845005429E1 /* DiagnosticLog+Subsystem.swift */; };
 		A91BAC2522BC691A00ABF1BB /* NightscoutServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC1B22BC691A00ABF1BB /* NightscoutServiceKit.framework */; };
 		A91BAC2C22BC691A00ABF1BB /* NightscoutServiceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A91BAC1E22BC691A00ABF1BB /* NightscoutServiceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A91BAC4322BC69B500ABF1BB /* NightscoutServiceKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */; };
 		A91BAC4A22BC69B500ABF1BB /* NightscoutServiceKitUI.h in Headers */ = {isa = PBXBuildFile; fileRef = A91BAC3C22BC69B500ABF1BB /* NightscoutServiceKitUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A91BAC5722BC6D9A00ABF1BB /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC5622BC6D9A00ABF1BB /* LoopKit.framework */; platformFilter = ios; };
-		A91BAC5822BC6DA700ABF1BB /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC5622BC6D9A00ABF1BB /* LoopKit.framework */; };
-		A91BAC5A22BC6DA800ABF1BB /* LoopKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC5922BC6DA800ABF1BB /* LoopKitUI.framework */; };
 		A91BAC5B22BC6DAC00ABF1BB /* NightscoutServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC1B22BC691A00ABF1BB /* NightscoutServiceKit.framework */; };
-		A91BAC5C22BC6DE000ABF1BB /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC5622BC6D9A00ABF1BB /* LoopKit.framework */; };
-		A91BAC5D22BC6E1500ABF1BB /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC5622BC6D9A00ABF1BB /* LoopKit.framework */; };
-		A91BAC5E22BC6E1500ABF1BB /* LoopKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC5922BC6DA800ABF1BB /* LoopKitUI.framework */; };
-		A922E526265A7B34003C08F2 /* OneTimePassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E2D9E726231DCC00AB8C89 /* OneTimePassword.framework */; platformFilter = ios; };
 		A9246B2526231B3A00CCDCB3 /* OTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9246B2426231B3A00CCDCB3 /* OTPManager.swift */; };
 		A934B6162358F42A00949C8B /* StoredDosingDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934B6152358F42A00949C8B /* StoredDosingDecision.swift */; };
 		A934B6182358F49300949C8B /* StoredSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934B6172358F49300949C8B /* StoredSettings.swift */; };
@@ -35,10 +27,6 @@
 		A95F887526C694E900D8A009 /* OTPManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95F887426C694E900D8A009 /* OTPManagerTestCase.swift */; };
 		A993990322BC7095005E39D3 /* NightscoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993990222BC7095005E39D3 /* NightscoutService.swift */; };
 		A993990522BC70B7005E39D3 /* NightscoutService+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993990422BC70B7005E39D3 /* NightscoutService+UI.swift */; };
-		A993990922BC72B4005E39D3 /* NightscoutUploadKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A993990822BC72B4005E39D3 /* NightscoutUploadKit.framework */; platformFilter = ios; };
-		A993990A22BC72CF005E39D3 /* NightscoutUploadKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A993990822BC72B4005E39D3 /* NightscoutUploadKit.framework */; };
-		A993990D22BC7307005E39D3 /* NightscoutUploadKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A993990822BC72B4005E39D3 /* NightscoutUploadKit.framework */; };
-		A993990E22BC7333005E39D3 /* NightscoutUploadKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A993990822BC72B4005E39D3 /* NightscoutUploadKit.framework */; };
 		A99C713523396CB100AB9035 /* NightscoutServiceKitPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = A99C713323396CB100AB9035 /* NightscoutServiceKitPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A99C714023396D6200AB9035 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C62DA32331CAD400535612 /* OSLog.swift */; };
 		A99C714223396D8E00AB9035 /* NightscoutServiceKitPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99C714123396D8E00AB9035 /* NightscoutServiceKitPlugin.swift */; };
@@ -59,6 +47,15 @@
 		C10201552526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10201542526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift */; };
 		C1398D2027C41E3D00416AD6 /* ProfileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */; };
 		C1398D2227C434FB00416AD6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1398D2127C434FB00416AD6 /* Data.swift */; };
+		C1B258AF27DD2E9E00906EEB /* OneTimePassword in Frameworks */ = {isa = PBXBuildFile; productRef = C1B258AE27DD2E9E00906EEB /* OneTimePassword */; };
+		C1C1348927DD31AA0097B5AD /* Base32 in Frameworks */ = {isa = PBXBuildFile; productRef = C1C1348827DD31AA0097B5AD /* Base32 */; };
+		C1C1349227DD32F10097B5AD /* Base32 in Frameworks */ = {isa = PBXBuildFile; productRef = C1C1349127DD32F10097B5AD /* Base32 */; };
+		C1C1349427DD32F80097B5AD /* OneTimePassword in Frameworks */ = {isa = PBXBuildFile; productRef = C1C1349327DD32F80097B5AD /* OneTimePassword */; };
+		C1C1349627DD35060097B5AD /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C1349527DD35060097B5AD /* LoopKit.framework */; };
+		C1C1349827DD35260097B5AD /* LoopKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C1349727DD35260097B5AD /* LoopKitUI.framework */; };
+		C1C1349D27DD38000097B5AD /* NightscoutServiceKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */; platformFilter = ios; };
+		C1C1349E27DD38000097B5AD /* NightscoutServiceKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C1C134A727DD3ACF0097B5AD /* OneTimePassword in Frameworks */ = {isa = PBXBuildFile; productRef = C1C134A627DD3ACF0097B5AD /* OneTimePassword */; };
 		C1E703642506BE9400DAB534 /* ObjectIdCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E703632506BE9400DAB534 /* ObjectIdCache.swift */; };
 		C1E7036625070A0E00DAB534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1E7036525070A0E00DAB534 /* Assets.xcassets */; };
 		C1E7036C25070D3200DAB534 /* ServiceUICoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7036B25070D3200DAB534 /* ServiceUICoordinator.swift */; };
@@ -106,7 +103,28 @@
 			remoteGlobalIDString = A91BAC3922BC69B500ABF1BB;
 			remoteInfo = NightscoutServiceKitUI;
 		};
+		C1C1349F27DD38000097B5AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A91BAC1222BC691A00ABF1BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A91BAC3922BC69B500ABF1BB;
+			remoteInfo = NightscoutServiceKitUI;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C1C134A127DD38000097B5AD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C1C1349E27DD38000097B5AD /* NightscoutServiceKitUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A90E399D22BC76DB0016DFE8 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
@@ -115,7 +133,6 @@
 		A90E39A422BC791E0016DFE8 /* DoseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseEntry.swift; sourceTree = "<group>"; };
 		A90E39A622BC7A360016DFE8 /* HKUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKUnit.swift; sourceTree = "<group>"; };
 		A90E39A822BC7AD10016DFE8 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		A9122E8326D1503700CDF0F5 /* Base32.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Base32.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A915719D23329845005429E1 /* DiagnosticLog+Subsystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiagnosticLog+Subsystem.swift"; sourceTree = "<group>"; };
 		A91BAC1B22BC691A00ABF1BB /* NightscoutServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightscoutServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91BAC1E22BC691A00ABF1BB /* NightscoutServiceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NightscoutServiceKit.h; sourceTree = "<group>"; };
@@ -127,8 +144,6 @@
 		A91BAC3D22BC69B500ABF1BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A91BAC4222BC69B500ABF1BB /* NightscoutServiceKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightscoutServiceKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91BAC4922BC69B500ABF1BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A91BAC5622BC6D9A00ABF1BB /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A91BAC5922BC6DA800ABF1BB /* LoopKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9246B2426231B3A00CCDCB3 /* OTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPManager.swift; sourceTree = "<group>"; };
 		A934B6152358F42A00949C8B /* StoredDosingDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredDosingDecision.swift; sourceTree = "<group>"; };
 		A934B6172358F49300949C8B /* StoredSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredSettings.swift; sourceTree = "<group>"; };
@@ -138,7 +153,6 @@
 		A95F887426C694E900D8A009 /* OTPManagerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPManagerTestCase.swift; sourceTree = "<group>"; };
 		A993990222BC7095005E39D3 /* NightscoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutService.swift; sourceTree = "<group>"; };
 		A993990422BC70B7005E39D3 /* NightscoutService+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NightscoutService+UI.swift"; sourceTree = "<group>"; };
-		A993990822BC72B4005E39D3 /* NightscoutUploadKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NightscoutUploadKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.loopplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightscoutServiceKitPlugin.loopplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99C713323396CB100AB9035 /* NightscoutServiceKitPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NightscoutServiceKitPlugin.h; sourceTree = "<group>"; };
 		A99C713423396CB100AB9035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,8 +179,6 @@
 		A9B007E722BD717E000131DE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A9B007E822BD717F000131DE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A9C62DA32331CAD400535612 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
-		A9E2D9D926231DAC00AB8C89 /* Base32.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Base32.xcframework; path = ../OneTimePassword/Carthage/Build/Base32.xcframework; sourceTree = "<group>"; };
-		A9E2D9E726231DCC00AB8C89 /* OneTimePassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OneTimePassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E2DA97262351F900AB8C89 /* OTPSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPSelectionView.swift; sourceTree = "<group>"; };
 		A9E4153522BC89A300168E14 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		A9E4153722BC89B600168E14 /* IdentifiableClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableClass.swift; sourceTree = "<group>"; };
@@ -176,6 +188,8 @@
 		C10201542526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NightscoutService+ServiceStatusViewModelDelegate.swift"; sourceTree = "<group>"; };
 		C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSet.swift; sourceTree = "<group>"; };
 		C1398D2127C434FB00416AD6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		C1C1349527DD35060097B5AD /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C1349727DD35260097B5AD /* LoopKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E703632506BE9400DAB534 /* ObjectIdCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectIdCache.swift; sourceTree = "<group>"; };
 		C1E7036525070A0E00DAB534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1E7036B25070D3200DAB534 /* ServiceUICoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceUICoordinator.swift; sourceTree = "<group>"; };
@@ -192,10 +206,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91BAC5722BC6D9A00ABF1BB /* LoopKit.framework in Frameworks */,
-				A993990922BC72B4005E39D3 /* NightscoutUploadKit.framework in Frameworks */,
-				A922E526265A7B34003C08F2 /* OneTimePassword.framework in Frameworks */,
-				A9122E8426D1503700CDF0F5 /* Base32.framework in Frameworks */,
+				C1C1349827DD35260097B5AD /* LoopKitUI.framework in Frameworks */,
+				C1C1349627DD35060097B5AD /* LoopKit.framework in Frameworks */,
+				C1C1348927DD31AA0097B5AD /* Base32 in Frameworks */,
+				C1B258AF27DD2E9E00906EEB /* OneTimePassword in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +217,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91BAC5C22BC6DE000ABF1BB /* LoopKit.framework in Frameworks */,
-				A993990D22BC7307005E39D3 /* NightscoutUploadKit.framework in Frameworks */,
 				A91BAC2522BC691A00ABF1BB /* NightscoutServiceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,9 +225,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91BAC5822BC6DA700ABF1BB /* LoopKit.framework in Frameworks */,
-				A91BAC5A22BC6DA800ABF1BB /* LoopKitUI.framework in Frameworks */,
-				A993990A22BC72CF005E39D3 /* NightscoutUploadKit.framework in Frameworks */,
+				C1C1349427DD32F80097B5AD /* OneTimePassword in Frameworks */,
+				C1C1349227DD32F10097B5AD /* Base32 in Frameworks */,
 				A91BAC5B22BC6DAC00ABF1BB /* NightscoutServiceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,9 +235,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91BAC5D22BC6E1500ABF1BB /* LoopKit.framework in Frameworks */,
-				A91BAC5E22BC6E1500ABF1BB /* LoopKitUI.framework in Frameworks */,
-				A993990E22BC7333005E39D3 /* NightscoutUploadKit.framework in Frameworks */,
 				A91BAC4322BC69B500ABF1BB /* NightscoutServiceKitUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +243,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1C1349D27DD38000097B5AD /* NightscoutServiceKitUI.framework in Frameworks */,
+				C1C134A727DD3ACF0097B5AD /* OneTimePassword in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,12 +348,8 @@
 		A91BAC5522BC6D9900ABF1BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A9122E8326D1503700CDF0F5 /* Base32.framework */,
-				A9E2D9D926231DAC00AB8C89 /* Base32.xcframework */,
-				A91BAC5622BC6D9A00ABF1BB /* LoopKit.framework */,
-				A91BAC5922BC6DA800ABF1BB /* LoopKitUI.framework */,
-				A9E2D9E726231DCC00AB8C89 /* OneTimePassword.framework */,
-				A993990822BC72B4005E39D3 /* NightscoutUploadKit.framework */,
+				C1C1349727DD35260097B5AD /* LoopKitUI.framework */,
+				C1C1349527DD35060097B5AD /* LoopKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -461,6 +467,10 @@
 			dependencies = (
 			);
 			name = NightscoutServiceKit;
+			packageProductDependencies = (
+				C1B258AE27DD2E9E00906EEB /* OneTimePassword */,
+				C1C1348827DD31AA0097B5AD /* Base32 */,
+			);
 			productName = NightscoutService;
 			productReference = A91BAC1B22BC691A00ABF1BB /* NightscoutServiceKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -499,6 +509,10 @@
 				A91BAC5222BC69BB00ABF1BB /* PBXTargetDependency */,
 			);
 			name = NightscoutServiceKitUI;
+			packageProductDependencies = (
+				C1C1349127DD32F10097B5AD /* Base32 */,
+				C1C1349327DD32F80097B5AD /* OneTimePassword */,
+			);
 			productName = NightscoutServiceKitUI;
 			productReference = A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -531,14 +545,19 @@
 				A99C712E23396CB100AB9035 /* Frameworks */,
 				A99C712F23396CB100AB9035 /* Resources */,
 				A99C713D23396D0300AB9035 /* Copy Frameworks with Carthage */,
+				C1C134A127DD38000097B5AD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				A99C713A23396CF600AB9035 /* PBXTargetDependency */,
 				A99C713C23396CF600AB9035 /* PBXTargetDependency */,
+				C1C134A027DD38000097B5AD /* PBXTargetDependency */,
 			);
 			name = NightscoutServiceKitPlugin;
+			packageProductDependencies = (
+				C1C134A627DD3ACF0097B5AD /* OneTimePassword */,
+			);
 			productName = NightscoutServiceKitPlugin;
 			productReference = A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.loopplugin */;
 			productType = "com.apple.product-type.framework";
@@ -589,6 +608,10 @@
 				es,
 			);
 			mainGroup = A91BAC1122BC691A00ABF1BB;
+			packageReferences = (
+				C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */,
+				C1C1348727DD31AA0097B5AD /* XCRemoteSwiftPackageReference "Base32" */,
+			);
 			productRefGroup = A91BAC1C22BC691A00ABF1BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -818,6 +841,12 @@
 			target = A91BAC3922BC69B500ABF1BB /* NightscoutServiceKitUI */;
 			targetProxy = A99C713B23396CF600AB9035 /* PBXContainerItemProxy */;
 		};
+		C1C134A027DD38000097B5AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = A91BAC3922BC69B500ABF1BB /* NightscoutServiceKitUI */;
+			targetProxy = C1C1349F27DD38000097B5AD /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -919,10 +948,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1031,10 +1057,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
@@ -1089,6 +1112,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = NightscoutServiceKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1116,6 +1140,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = NightscoutServiceKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1373,6 +1398,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattrubin/OneTimePassword";
+			requirement = {
+				kind = revision;
+				revision = 8e4022f2852d77240d0a17482cbfe325354aac70;
+			};
+		};
+		C1C1348727DD31AA0097B5AD /* XCRemoteSwiftPackageReference "Base32" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ekscrypto/Base32";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1B258AE27DD2E9E00906EEB /* OneTimePassword */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */;
+			productName = OneTimePassword;
+		};
+		C1C1348827DD31AA0097B5AD /* Base32 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C1348727DD31AA0097B5AD /* XCRemoteSwiftPackageReference "Base32" */;
+			productName = Base32;
+		};
+		C1C1349127DD32F10097B5AD /* Base32 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C1348727DD31AA0097B5AD /* XCRemoteSwiftPackageReference "Base32" */;
+			productName = Base32;
+		};
+		C1C1349327DD32F80097B5AD /* OneTimePassword */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */;
+			productName = OneTimePassword;
+		};
+		C1C134A627DD3ACF0097B5AD /* OneTimePassword */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */;
+			productName = OneTimePassword;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A91BAC1222BC691A00ABF1BB /* Project object */;
 }
