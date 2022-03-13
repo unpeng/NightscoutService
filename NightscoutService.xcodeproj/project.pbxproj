@@ -45,18 +45,17 @@
 		A9F9ADED263F0F71005C6C48 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9ADEC263F0F71005C6C48 /* OTPViewModel.swift */; };
 		C102014D2526C1BA003B6FB7 /* ServiceStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C102014C2526C1BA003B6FB7 /* ServiceStatusViewModel.swift */; };
 		C10201552526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10201542526D3E8003B6FB7 /* NightscoutService+ServiceStatusViewModelDelegate.swift */; };
-		C130B6F827DD4CD000173048 /* NightscoutUploadKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */; };
 		C1398D2027C41E3D00416AD6 /* ProfileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */; };
 		C1398D2227C434FB00416AD6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1398D2127C434FB00416AD6 /* Data.swift */; };
-		C1B258AF27DD2E9E00906EEB /* OneTimePassword in Frameworks */ = {isa = PBXBuildFile; productRef = C1B258AE27DD2E9E00906EEB /* OneTimePassword */; };
-		C1C1348927DD31AA0097B5AD /* Base32 in Frameworks */ = {isa = PBXBuildFile; productRef = C1C1348827DD31AA0097B5AD /* Base32 */; };
-		C1C1349227DD32F10097B5AD /* Base32 in Frameworks */ = {isa = PBXBuildFile; productRef = C1C1349127DD32F10097B5AD /* Base32 */; };
-		C1C1349427DD32F80097B5AD /* OneTimePassword in Frameworks */ = {isa = PBXBuildFile; productRef = C1C1349327DD32F80097B5AD /* OneTimePassword */; };
+		C1B9ACF827DE987400857532 /* OneTimePassword in Frameworks */ = {isa = PBXBuildFile; productRef = C1B9ACF727DE987400857532 /* OneTimePassword */; };
+		C1B9ACF927DE995C00857532 /* NightscoutUploadKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */; };
+		C1B9ACFC27DE99D600857532 /* NightscoutUploadKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C1B9AD0027DE9AD800857532 /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B9ACFF27DE9AD800857532 /* Crypto.framework */; };
+		C1B9AD0127DE9AEC00857532 /* Crypto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1B9ACFF27DE9AD800857532 /* Crypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1C1349627DD35060097B5AD /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C1349527DD35060097B5AD /* LoopKit.framework */; };
 		C1C1349827DD35260097B5AD /* LoopKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C1349727DD35260097B5AD /* LoopKitUI.framework */; };
-		C1C1349D27DD38000097B5AD /* NightscoutServiceKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */; platformFilter = ios; };
+		C1C1349D27DD38000097B5AD /* NightscoutServiceKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */; };
 		C1C1349E27DD38000097B5AD /* NightscoutServiceKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C1C134A727DD3ACF0097B5AD /* OneTimePassword in Frameworks */ = {isa = PBXBuildFile; productRef = C1C134A627DD3ACF0097B5AD /* OneTimePassword */; };
 		C1E703642506BE9400DAB534 /* ObjectIdCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E703632506BE9400DAB534 /* ObjectIdCache.swift */; };
 		C1E7036625070A0E00DAB534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1E7036525070A0E00DAB534 /* Assets.xcassets */; };
 		C1E7036C25070D3200DAB534 /* ServiceUICoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7036B25070D3200DAB534 /* ServiceUICoordinator.swift */; };
@@ -120,7 +119,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C1B9AD0127DE9AEC00857532 /* Crypto.framework in Embed Frameworks */,
 				C1C1349E27DD38000097B5AD /* NightscoutServiceKitUI.framework in Embed Frameworks */,
+				C1B9ACFC27DE99D600857532 /* NightscoutUploadKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +191,7 @@
 		C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NightscoutUploadKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1398D1F27C41E3D00416AD6 /* ProfileSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSet.swift; sourceTree = "<group>"; };
 		C1398D2127C434FB00416AD6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		C1B9ACFF27DE9AD800857532 /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C1349527DD35060097B5AD /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C1349727DD35260097B5AD /* LoopKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E703632506BE9400DAB534 /* ObjectIdCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectIdCache.swift; sourceTree = "<group>"; };
@@ -210,9 +212,8 @@
 			files = (
 				C1C1349827DD35260097B5AD /* LoopKitUI.framework in Frameworks */,
 				C1C1349627DD35060097B5AD /* LoopKit.framework in Frameworks */,
-				C1C1348927DD31AA0097B5AD /* Base32 in Frameworks */,
-				C1B258AF27DD2E9E00906EEB /* OneTimePassword in Frameworks */,
-				C130B6F827DD4CD000173048 /* NightscoutUploadKit.framework in Frameworks */,
+				C1B9ACF927DE995C00857532 /* NightscoutUploadKit.framework in Frameworks */,
+				C1B9ACF827DE987400857532 /* OneTimePassword in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,8 +229,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1C1349427DD32F80097B5AD /* OneTimePassword in Frameworks */,
-				C1C1349227DD32F10097B5AD /* Base32 in Frameworks */,
 				A91BAC5B22BC6DAC00ABF1BB /* NightscoutServiceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C1349D27DD38000097B5AD /* NightscoutServiceKitUI.framework in Frameworks */,
-				C1C134A727DD3ACF0097B5AD /* OneTimePassword in Frameworks */,
+				C1B9AD0027DE9AD800857532 /* Crypto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +350,7 @@
 		A91BAC5522BC6D9900ABF1BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1B9ACFF27DE9AD800857532 /* Crypto.framework */,
 				C130B6F727DD4CD000173048 /* NightscoutUploadKit.framework */,
 				C1C1349727DD35260097B5AD /* LoopKitUI.framework */,
 				C1C1349527DD35060097B5AD /* LoopKit.framework */,
@@ -472,8 +472,7 @@
 			);
 			name = NightscoutServiceKit;
 			packageProductDependencies = (
-				C1B258AE27DD2E9E00906EEB /* OneTimePassword */,
-				C1C1348827DD31AA0097B5AD /* Base32 */,
+				C1B9ACF727DE987400857532 /* OneTimePassword */,
 			);
 			productName = NightscoutService;
 			productReference = A91BAC1B22BC691A00ABF1BB /* NightscoutServiceKit.framework */;
@@ -514,8 +513,6 @@
 			);
 			name = NightscoutServiceKitUI;
 			packageProductDependencies = (
-				C1C1349127DD32F10097B5AD /* Base32 */,
-				C1C1349327DD32F80097B5AD /* OneTimePassword */,
 			);
 			productName = NightscoutServiceKitUI;
 			productReference = A91BAC3A22BC69B500ABF1BB /* NightscoutServiceKitUI.framework */;
@@ -548,7 +545,6 @@
 				A99C712D23396CB100AB9035 /* Sources */,
 				A99C712E23396CB100AB9035 /* Frameworks */,
 				A99C712F23396CB100AB9035 /* Resources */,
-				A99C713D23396D0300AB9035 /* Copy Frameworks with Carthage */,
 				C1C134A127DD38000097B5AD /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -560,7 +556,6 @@
 			);
 			name = NightscoutServiceKitPlugin;
 			packageProductDependencies = (
-				C1C134A627DD3ACF0097B5AD /* OneTimePassword */,
 			);
 			productName = NightscoutServiceKitPlugin;
 			productReference = A99C713123396CB100AB9035 /* NightscoutServiceKitPlugin.loopplugin */;
@@ -613,8 +608,7 @@
 			);
 			mainGroup = A91BAC1122BC691A00ABF1BB;
 			packageReferences = (
-				C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */,
-				C1C1348727DD31AA0097B5AD /* XCRemoteSwiftPackageReference "Base32" */,
+				C1B9ACF627DE987400857532 /* XCRemoteSwiftPackageReference "OneTimePassword" */,
 			);
 			productRefGroup = A91BAC1C22BC691A00ABF1BB /* Products */;
 			projectDirPath = "";
@@ -716,28 +710,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "CARTHAGE_BUILD_DIR=\"${SRCROOT}/Carthage/Build\"\nif [ -n \"${IPHONEOS_DEPLOYMENT_TARGET}\" ]; then\n    CARTHAGE_BUILD_DIR=\"${CARTHAGE_BUILD_DIR}/iOS\"\nelif [ -n \"${WATCHOS_DEPLOYMENT_TARGET}\" ]; then\n    CARTHAGE_BUILD_DIR=\"${CARTHAGE_BUILD_DIR}/watchOS\"\nelse\n    echo \"ERROR: Unexpected deployment target type\"\n    exit 1\nfi\n\nfor SCRIPT_INPUT_FILE in ${!SCRIPT_INPUT_FILE_*}; do\n    CARTHAGE_BUILD_FILE=\"${!SCRIPT_INPUT_FILE/${BUILT_PRODUCTS_DIR}/${CARTHAGE_BUILD_DIR}}\"\n    if [ -e \"${CARTHAGE_BUILD_FILE}\" ]; then\n        if [ -e \"${SCRIPT_INPUT_FILE}\" ]; then\n            echo \"ERROR: Duplicate frameworks found at:\"\n            echo \"  ${SCRIPT_INPUT_FILE}\"\n            echo \"  ${CARTHAGE_BUILD_FILE}\"\n            exit 1\n        fi\n        echo \"Substituting \\\"${CARTHAGE_BUILD_FILE}\\\" for \\\"${!SCRIPT_INPUT_FILE}\\\"\"\n        export ${SCRIPT_INPUT_FILE}=\"${CARTHAGE_BUILD_FILE}\"\n    fi\ndone\n\necho \"Copy Frameworks with Carthage\"\ncarthage copy-frameworks\n";
-		};
-		A99C713D23396D0300AB9035 /* Copy Frameworks with Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/NightscoutServiceKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/NightscoutServiceKitUI.framework",
-				"$(BUILT_PRODUCTS_DIR)/NightscoutUploadKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/Crypto.framework",
-			);
-			name = "Copy Frameworks with Carthage";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Scripts/copy-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1404,48 +1376,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */ = {
+		C1B9ACF627DE987400857532 /* XCRemoteSwiftPackageReference "OneTimePassword" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mattrubin/OneTimePassword";
 			requirement = {
-				kind = revision;
-				revision = 8e4022f2852d77240d0a17482cbfe325354aac70;
-			};
-		};
-		C1C1348727DD31AA0097B5AD /* XCRemoteSwiftPackageReference "Base32" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ekscrypto/Base32";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = develop;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C1B258AE27DD2E9E00906EEB /* OneTimePassword */ = {
+		C1B9ACF727DE987400857532 /* OneTimePassword */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */;
-			productName = OneTimePassword;
-		};
-		C1C1348827DD31AA0097B5AD /* Base32 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1C1348727DD31AA0097B5AD /* XCRemoteSwiftPackageReference "Base32" */;
-			productName = Base32;
-		};
-		C1C1349127DD32F10097B5AD /* Base32 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1C1348727DD31AA0097B5AD /* XCRemoteSwiftPackageReference "Base32" */;
-			productName = Base32;
-		};
-		C1C1349327DD32F80097B5AD /* OneTimePassword */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */;
-			productName = OneTimePassword;
-		};
-		C1C134A627DD3ACF0097B5AD /* OneTimePassword */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1B258AD27DD2E9E00906EEB /* XCRemoteSwiftPackageReference "OneTimePassword" */;
+			package = C1B9ACF627DE987400857532 /* XCRemoteSwiftPackageReference "OneTimePassword" */;
 			productName = OneTimePassword;
 		};
 /* End XCSwiftPackageProductDependency section */
