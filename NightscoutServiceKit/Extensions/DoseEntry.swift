@@ -28,7 +28,8 @@ extension DoseEntry {
                 duration: duration,
                 automatic: automatic ?? false,
                 /* id: objectId, */ /// Specifying _id only works when doing a put (modify); all dose uploads are currently posting so they can be either create or update
-                syncIdentifier: syncIdentifier
+                syncIdentifier: syncIdentifier,
+                insulinType: insulinType?.brandName
             )
         case .resume:
             return PumpResumeTreatment(timestamp: startDate, enteredBy: source, /* id: objectId, */ syncIdentifier: syncIdentifier)
@@ -44,7 +45,8 @@ extension DoseEntry {
                 duration: endDate.timeIntervalSince(startDate),
                 amount: deliveredUnits,
                 /* id: objectId, */ /// Specifying _id only works when doing a put (modify); all dose uploads are currently posting so they can be either create or update
-                syncIdentifier: syncIdentifier
+                syncIdentifier: syncIdentifier,
+                insulinType: insulinType?.brandName
             )
         }
     }
