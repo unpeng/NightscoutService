@@ -110,6 +110,7 @@ extension StoredDosingDecision {
         guard let pumpManagerStatus = pumpManagerStatus else {
             return nil
         }
+
         return PumpStatus(
             clock: date,
             pumpID: pumpManagerStatus.device.localIdentifier ?? "Unknown",
@@ -120,7 +121,10 @@ extension StoredDosingDecision {
             suspended: pumpManagerStatus.basalDeliveryState?.isSuspended,
             bolusing: pumpStatusBolusing,
             reservoir: pumpStatusReservoir,
-            secondsFromGMT: pumpManagerStatus.timeZone.secondsFromGMT())
+            secondsFromGMT: pumpManagerStatus.timeZone.secondsFromGMT(),
+            reservoirDisplayOverride: pumpStatusHighlight?.localizedMessage,
+            reservoirLevelOverride: pumpStatusHighlight?.reservoirLevelOverride
+        )
     }
     
     var overrideStatus: NightscoutUploadKit.OverrideStatus {
@@ -170,3 +174,17 @@ extension StoredDosingDecision.Issue {
         return description
     }
 }
+
+extension StoredDosingDecision.StoredDeviceHighlight {
+    var reservoirLevelOverride: NightscoutSeverityLevel {
+        switch state {
+        case .normalPump, .normalCGM:
+            return .none
+        case .warning:
+            return .warn
+        case .critical:
+            return .urgent
+        }
+    }
+}
+
