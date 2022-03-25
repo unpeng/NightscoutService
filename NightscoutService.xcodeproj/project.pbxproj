@@ -219,6 +219,8 @@
 		F5D9C00327DAB549002E48F6 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5D9C00427DAB551002E48F6 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5D9C00527DAB551002E48F6 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5E0BE2027E1DE720033557E /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5E0BE2127E1DE720033557E /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -629,6 +631,7 @@
 				sv,
 				vi,
 				tr,
+				he,
 			);
 			mainGroup = A91BAC1122BC691A00ABF1BB;
 			packageReferences = (
@@ -871,6 +874,7 @@
 				F5D9C00027DAB53F002E48F6 /* sv */,
 				F5D9C00227DAB549002E48F6 /* vi */,
 				F5D9C00427DAB551002E48F6 /* tr */,
+				F5E0BE2027E1DE720033557E /* he */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -896,6 +900,7 @@
 				F5D9C00127DAB540002E48F6 /* sv */,
 				F5D9C00327DAB549002E48F6 /* vi */,
 				F5D9C00527DAB551002E48F6 /* tr */,
+				F5E0BE2127E1DE720033557E /* he */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
