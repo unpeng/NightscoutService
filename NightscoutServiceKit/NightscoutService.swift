@@ -232,7 +232,7 @@ extension NightscoutService: RemoteDataService {
             return
         }
 
-        uploader.createDoses(created.filter { !$0.isMutable } , usingObjectIdCache: self.objectIdCache) { (result) in
+        uploader.createDoses(created, usingObjectIdCache: self.objectIdCache) { (result) in
             switch (result) {
             case .failure(let error):
                 completion(.failure(error))
