@@ -61,11 +61,10 @@ extension StoredDosingDecision {
     }
     
     var loopStatusEnacted: LoopEnacted? {
-        guard case .some(.tempBasal(let tempBasal)) = pumpManagerStatus?.basalDeliveryState else {
+        guard let automaticDoseRecommendation = automaticDoseRecommendation, errors.isEmpty, let tempBasal = automaticDoseRecommendation.basalAdjustment else {
             return nil
         }
-        let duration = tempBasal.endDate.timeIntervalSince(tempBasal.startDate)
-        return LoopEnacted(rate: tempBasal.unitsPerHour, duration: duration, timestamp: tempBasal.startDate, received: true)
+        return LoopEnacted(rate: tempBasal.unitsPerHour, duration: tempBasal.duration, timestamp: date, received: true, bolusVolume: automaticDoseRecommendation.bolusUnits ?? 0)
     }
 
     var loopStatusFailureReason: String? {
