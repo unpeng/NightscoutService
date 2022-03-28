@@ -61,10 +61,16 @@ extension StoredDosingDecision {
     }
     
     var loopStatusEnacted: LoopEnacted? {
-        guard let automaticDoseRecommendation = automaticDoseRecommendation, errors.isEmpty, let tempBasal = automaticDoseRecommendation.basalAdjustment else {
+        guard let automaticDoseRecommendation = automaticDoseRecommendation, errors.isEmpty else {
             return nil
         }
-        return LoopEnacted(rate: tempBasal.unitsPerHour, duration: tempBasal.duration, timestamp: date, received: true, bolusVolume: automaticDoseRecommendation.bolusUnits ?? 0)
+        let tempBasal = automaticDoseRecommendation.basalAdjustment
+        return LoopEnacted(
+            rate: tempBasal?.unitsPerHour,
+            duration: tempBasal?.duration,
+            timestamp: date,
+            received: true,
+            bolusVolume: automaticDoseRecommendation.bolusUnits ?? 0)
     }
 
     var loopStatusFailureReason: String? {
