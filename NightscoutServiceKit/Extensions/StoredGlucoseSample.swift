@@ -19,10 +19,18 @@ extension StoredGlucoseSample {
             glucoseTrend = nil
         }
 
+        let deviceString: String
+
+        if let device = device, let manufacturer = device.manufacturer, let model = device.model, let software = device.softwareVersion {
+            deviceString = "loop://\(manufacturer)/\(model)/\(software)"
+        } else {
+            deviceString = "loop://\(UIDevice.current.name)"
+        }
+
         return GlucoseEntry(
             glucose: quantity.doubleValue(for: .milligramsPerDeciliter),
             date: startDate,
-            device: "loop://\(UIDevice.current.name)",
+            device: deviceString,
             glucoseType: wasUserEntered ? .meter : .sensor,
             trend: glucoseTrend,
             changeRate: trendRate?.doubleValue(for: .milligramsPerDeciliterPerMinute),
