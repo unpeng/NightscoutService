@@ -44,6 +44,7 @@ extension DoseEntry {
                 absolute: unitsPerHour,
                 duration: endDate.timeIntervalSince(startDate),
                 amount: deliveredUnits,
+                automatic: automatic ?? true,
                 /* id: objectId, */ /// Specifying _id only works when doing a put (modify); all dose uploads are currently posting so they can be either create or update
                 syncIdentifier: syncIdentifier,
                 insulinType: insulinType?.brandName
