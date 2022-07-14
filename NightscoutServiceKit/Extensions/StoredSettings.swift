@@ -46,8 +46,9 @@ extension StoredSettings {
         guard let basalRateSchedule = basalRateSchedule,
             let defaultRapidActingModel = defaultRapidActingModel,
             let carbRatioSchedule = carbRatioSchedule,
-            let insulinSensitivitySchedule = insulinSensitivitySchedule,
-            let glucoseTargetRangeSchedule = glucoseTargetRangeSchedule else
+            let glucoseTargetRangeSchedule = glucoseTargetRangeSchedule,
+            let insulinSensitivitySchedule = insulinSensitivitySchedule?.schedule(for: glucoseTargetRangeSchedule.unit)
+             else
         {
             return nil
         }
@@ -68,7 +69,7 @@ extension StoredSettings {
             basal: basalRateSchedule.items.scheduleItems,
             targetLow: targetLowItems,
             targetHigh: targetHighItems,
-            units: glucoseTargetRangeSchedule.unit.shortLocalizedUnitString())
+            units: glucoseTargetRangeSchedule.unit.shortLocalizedUnitString(avoidLineBreaking: false))
     }
 
     var profileSet: ProfileSet? {
