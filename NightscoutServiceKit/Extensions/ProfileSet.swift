@@ -21,7 +21,9 @@ private extension HKUnit {
             return .millimolesPerLiter
         }
 
-        if unitString == HKUnit.milligramsPerDeciliter.shortLocalizedUnitString() {
+        if unitString == HKUnit.milligramsPerDeciliter.shortLocalizedUnitString() ||
+            unitString == HKUnit.milligramsPerDeciliter.shortLocalizedUnitString(avoidLineBreaking: false)
+        {
             return .milligramsPerDeciliter
         }
 
