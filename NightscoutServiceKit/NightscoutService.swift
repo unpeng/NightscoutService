@@ -276,7 +276,7 @@ extension NightscoutService: RemoteDataService {
             switch decision.reason {
             case "loop":
                 lastDosingDecisionForAutomaticDose = decision
-            case "updateRecommendedManualBolus", "normalBolus", "simpleBolus", "watchBolus":
+            case "updateRemoteRecommendation", "normalBolus", "simpleBolus", "watchBolus":
                 uploadPairs.append((decision, lastDosingDecisionForAutomaticDose))
             default:
                 break

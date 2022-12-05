@@ -73,20 +73,6 @@ extension StoredDosingDecision {
         return errors.first?.description
     }
     
-    func loopStatus(automaticDoseDecision: StoredDosingDecision?) -> LoopStatus {
-
-        return LoopStatus(name: Bundle.main.bundleDisplayName,
-                          version: Bundle.main.fullVersionString,
-                          timestamp: date,
-                          iob: loopStatusIOB,
-                          cob: loopStatusCOB,
-                          predicted: loopStatusPredicted,
-                          automaticDoseRecommendation: loopStatusAutomaticDoseRecommendation,
-                          recommendedBolus: loopStatusRecommendedBolus,
-                          enacted: automaticDoseDecision?.loopStatusEnacted,
-                          failureReason: automaticDoseDecision?.loopStatusFailureReason)
-    }
-    
     var pumpStatusBattery: BatteryStatus? {
         guard let pumpBatteryChargeRemaining = pumpManagerStatus?.pumpBatteryChargeRemaining else {
             return nil
@@ -161,7 +147,16 @@ extension StoredDosingDecision {
             timestamp: date,
             pumpStatus: pumpStatus,
             uploaderStatus: uploaderStatus,
-            loopStatus: loopStatus(automaticDoseDecision: automaticDoseDecision),
+            loopStatus: LoopStatus(name: Bundle.main.bundleDisplayName,
+                                   version: Bundle.main.fullVersionString,
+                                   timestamp: date,
+                                   iob: loopStatusIOB,
+                                   cob: loopStatusCOB,
+                                   predicted: loopStatusPredicted,
+                                   automaticDoseRecommendation: loopStatusAutomaticDoseRecommendation,
+                                   recommendedBolus: loopStatusRecommendedBolus,
+                                   enacted: automaticDoseDecision?.loopStatusEnacted,
+                                   failureReason: automaticDoseDecision?.loopStatusFailureReason),
             overrideStatus: overrideStatus)
     }
     
