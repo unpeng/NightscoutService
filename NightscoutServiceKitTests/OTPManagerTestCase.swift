@@ -84,7 +84,7 @@ class OTPManagerTestCase: XCTestCase {
         //Arrange
         let testCoordinator = OTPTestCoordinator()
         let manager = testCoordinator.createOTPManager()
-        let randomOTP = "12345"
+        let randomOTP = "123456"
         
         //Act
         var thrownError: Error? = nil
@@ -96,6 +96,29 @@ class OTPManagerTestCase: XCTestCase {
         
         //Assert
         guard let validationError = thrownError as? OTPManager.OTPValidationError, case .incorrectOTP = validationError else {
+            XCTFail("Unexpected type \(thrownError.debugDescription)")
+            return
+        }
+    
+    }
+    
+    func testValidateOTP_WhenBadlyFormattedPasswordUsed_Throws() throws {
+        
+        //Arrange
+        let testCoordinator = OTPTestCoordinator()
+        let manager = testCoordinator.createOTPManager()
+        let invalidFormatOTP = "12345" //Requires length of 6
+        
+        //Act
+        var thrownError: Error? = nil
+        do {
+            try manager.validatePassword(password: invalidFormatOTP, deliveryDate: testCoordinator.currentOTP().period.startDate)
+        } catch {
+            thrownError = error
+        }
+        
+        //Assert
+        guard let validationError = thrownError as? OTPManager.OTPValidationError, case .invalidFormat = validationError else {
             XCTFail("Unexpected type \(thrownError.debugDescription)")
             return
         }
