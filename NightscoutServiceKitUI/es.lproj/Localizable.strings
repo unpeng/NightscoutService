@@ -7,8 +7,15 @@
 /* The placeholder text for the Nightscout site URL */
 "https://mysite.herokuapp.com" = "https://mysite.herokuapp.com";
 
+/* Button text to login on Nightscout CredentialsView */
+"Login" = "Iniciar sesión";
+
+/* No comment provided by engineer. */
+"Logout" = "Cerrar sesión";
+
 /* The default placeholder for required text */
 "Required" = "Requerido";
 
 /* The title of the Nightscout site URL */
 "Site URL" = "URL de Sitio";
+
