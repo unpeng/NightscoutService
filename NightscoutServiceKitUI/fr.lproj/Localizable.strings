@@ -37,8 +37,14 @@
 /* Description of ServiceStatus of checking */
 "OK" = "OK";
 
+/* No comment provided by engineer. */
+"One-Time Password" = "Mot de passe à usage unique";
+
 /* The default placeholder for required text */
 "Required" = "Nécessaire";
+
+/* No comment provided by engineer. */
+"Reset Secret Key" = "Réinitialiser la clé secrète";
 
 /* The title of the Nightscout site URL */
 "Site URL" = "URL du site";

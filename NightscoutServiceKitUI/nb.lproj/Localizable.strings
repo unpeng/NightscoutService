@@ -1,5 +1,5 @@
 /* The title of the Nightscout API secret */
-"API Secret" = "API Secret";
+"API Secret" = "API Hemmelighet";
 
 /* No comment provided by engineer. */
 "Are you sure you want to reset the secret key?" = "Er du sikker på at du vil tilbakestille den hemmelige nøkkelen?";
@@ -37,11 +37,17 @@
 /* Description of ServiceStatus of checking */
 "OK" = "OK";
 
+/* No comment provided by engineer. */
+"One-Time Password" = "Engangspassord";
+
 /* The default placeholder for required text */
 "Required" = "Påkrevd";
 
+/* No comment provided by engineer. */
+"Reset Secret Key" = "Tilbakestill hemmelig nøkkel";
+
 /* The title of the Nightscout site URL */
-"Site URL" = "Nettsted (URL)";
+"Site URL" = "Nettstedslenke (URL)";
 
 /* No comment provided by engineer. */
 "Status" = "Status";
