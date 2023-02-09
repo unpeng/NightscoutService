@@ -1,3 +1,6 @@
+/* Name of custom override */
+"Custom Override" = "Brugerdefineret Override";
+
 /* The title of the Nightscout service */
 "Nightscout" = "Nightscout";
 

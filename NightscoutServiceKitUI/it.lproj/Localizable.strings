@@ -20,16 +20,16 @@
 "https://mysite.herokuapp.com" = "https://mysite.herokuapp.com";
 
 /* Button text to login on Nightscout CredentialsView */
-"Login" = "Connessione";
+"Login" = "Accesso";
 
 /* No comment provided by engineer. */
-"Logout" = "Disconnessione";
+"Logout" = "Esci";
 
 /* No comment provided by engineer. */
 "Nightscout" = "Nightscout";
 
 /* Title on Nightscout CredentialsView */
-"Nightscout Login" = "Connessione a Nightscout";
+"Nightscout Login" = "Accesso Nightscout";
 
 /* Error when nightscout service url is not set */
 "Not Available" = "Non Disponibile";

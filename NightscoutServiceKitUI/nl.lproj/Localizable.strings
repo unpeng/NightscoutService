@@ -20,7 +20,7 @@
 "https://mysite.herokuapp.com" = "https://mijnsite.herokuapp.com";
 
 /* Button text to login on Nightscout CredentialsView */
-"Login" = "Inloggen";
+"Login" = "Login";
 
 /* No comment provided by engineer. */
 "Logout" = "Uitloggen";
