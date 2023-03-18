@@ -1,6 +1,9 @@
 /* The title of the Nightscout API secret */
 "API Secret" = "API Secret";
 
+/* No comment provided by engineer. */
+"Are you sure you want to reset the secret key?" = "Sunteți sigur/ă că doriți să resetați cheia secretă?";
+
 /* Button text to cancel Nightscout credential input */
 "Cancel" = "Renunță";
 
@@ -34,8 +37,14 @@
 /* Description of ServiceStatus of checking */
 "OK" = "OK";
 
+/* No comment provided by engineer. */
+"One-Time Password" = "Parolă de unică folosință";
+
 /* The default placeholder for required text */
 "Required" = "Required";
+
+/* No comment provided by engineer. */
+"Reset Secret Key" = "Cheia secretă de resetare";
 
 /* The title of the Nightscout site URL */
 "Site URL" = "Site URL";
