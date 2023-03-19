@@ -1,5 +1,5 @@
 /* The title of the Nightscout API secret */
-"API Secret" = "API Secret";
+"API Secret" = "API Секрет";
 
 /* No comment provided by engineer. */
 "Are you sure you want to reset the secret key?" = "Вы уверены, что хотите сбросить секретный ключ?";
@@ -41,7 +41,7 @@
 "One-Time Password" = "Одноразовый пароль";
 
 /* The default placeholder for required text */
-"Required" = "Обязательное значение";
+"Required" = "обязательный";
 
 /* No comment provided by engineer. */
 "Reset Secret Key" = "Сброс секретного ключа";
@@ -53,5 +53,5 @@
 "Status" = "Статус";
 
 /* No comment provided by engineer. */
-"URL" = "URL-адрес";
+"URL" = "URL";
 

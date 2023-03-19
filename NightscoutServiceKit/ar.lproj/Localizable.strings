@@ -1,8 +1,8 @@
 /* Name of custom override */
-"Custom Override" = "Custom Override";
+"Custom Override" = "تجاوز مخصص";
 
 /* The title of the Nightscout service */
-"Nightscout" = "נייטסקאוט";
+"Nightscout" = "نايتسكاوت";
 
 /* Name of pre-meal workout override
    Name uploaded to Nightscout for Pre-Meal override */
@@ -10,5 +10,5 @@
 
 /* Name of legacy workout override
    Name uploaded to Nightscout for legacy workout override */
-"Workout" = "Workout";
+"Workout" = "التمارين";
 

@@ -1,5 +1,5 @@
 /* The title of the Nightscout API secret */
-"API Secret" = "API Secret";
+"API Secret" = "API kodeord";
 
 /* No comment provided by engineer. */
 "Are you sure you want to reset the secret key?" = "Er du sikker på, at du vil nulstille Secret Key?";
@@ -8,7 +8,7 @@
 "Cancel" = "Annuller";
 
 /* Description of ServiceStatus of checking */
-"Checking..." = "Tjekker...";
+"Checking..." = "Kontrollerer...";
 
 /* Button title to delete a service */
 "Delete Service" = "Slet service";
@@ -20,7 +20,7 @@
 "https://mysite.herokuapp.com" = "https://mysite.herokuapp.com";
 
 /* Button text to login on Nightscout CredentialsView */
-"Login" = "Login";
+"Login" = "Log ind";
 
 /* No comment provided by engineer. */
 "Logout" = "Log ud";
@@ -47,7 +47,7 @@
 "Reset Secret Key" = "Nulstil API Secret Key";
 
 /* The title of the Nightscout site URL */
-"Site URL" = "Site URL";
+"Site URL" = "Side-URL";
 
 /* No comment provided by engineer. */
 "Status" = "Status";

@@ -1,5 +1,5 @@
 /* The title of the Nightscout API secret */
-"API Secret" = "API Secret";
+"API Secret" = "Secretul API";
 
 /* No comment provided by engineer. */
 "Are you sure you want to reset the secret key?" = "Sunteți sigur/ă că doriți să resetați cheia secretă?";
@@ -11,10 +11,10 @@
 "Checking..." = "Se verifică...";
 
 /* Button title to delete a service */
-"Delete Service" = "Delete Service";
+"Delete Service" = "Șterge serviciul";
 
 /* No comment provided by engineer. */
-"Done" = "Terminat";
+"Done" = "Realizat";
 
 /* The placeholder text for the Nightscout site URL */
 "https://mysite.herokuapp.com" = "https://mysite.herokuapp.com";
@@ -41,13 +41,13 @@
 "One-Time Password" = "Parolă de unică folosință";
 
 /* The default placeholder for required text */
-"Required" = "Required";
+"Required" = "Necesar";
 
 /* No comment provided by engineer. */
 "Reset Secret Key" = "Cheia secretă de resetare";
 
 /* The title of the Nightscout site URL */
-"Site URL" = "Site URL";
+"Site URL" = "URL site";
 
 /* No comment provided by engineer. */
 "Status" = "Stare";

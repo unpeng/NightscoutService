@@ -11,7 +11,7 @@
 "Checking..." = "Controllo in corso";
 
 /* Button title to delete a service */
-"Delete Service" = "Cancella Servizio";
+"Delete Service" = "Elimina Servizio";
 
 /* No comment provided by engineer. */
 "Done" = "Fine";
@@ -53,5 +53,5 @@
 "Status" = "Stato";
 
 /* No comment provided by engineer. */
-"URL" = "Sito URL";
+"URL" = "URL";
 

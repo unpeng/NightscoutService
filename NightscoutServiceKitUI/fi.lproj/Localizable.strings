@@ -1,5 +1,5 @@
 /* The title of the Nightscout API secret */
-"API Secret" = "API Secret";
+"API Secret" = "API-salasana";
 
 /* Button text to cancel Nightscout credential input */
 "Cancel" = "Kumoa";
@@ -8,7 +8,7 @@
 "Checking..." = "Tarkistetaan...";
 
 /* Button title to delete a service */
-"Delete Service" = "Delete Service";
+"Delete Service" = "Poista palvelu";
 
 /* No comment provided by engineer. */
 "Done" = "Valmis";
@@ -35,10 +35,10 @@
 "OK" = "OK";
 
 /* The default placeholder for required text */
-"Required" = "Required";
+"Required" = "Pakollinen";
 
 /* The title of the Nightscout site URL */
-"Site URL" = "Site URL";
+"Site URL" = "URL";
 
 /* No comment provided by engineer. */
 "Status" = "Tila";

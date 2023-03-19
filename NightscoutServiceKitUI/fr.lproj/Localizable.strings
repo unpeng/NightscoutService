@@ -41,7 +41,7 @@
 "One-Time Password" = "Mot de passe à usage unique";
 
 /* The default placeholder for required text */
-"Required" = "Nécessaire";
+"Required" = "Obligatoire";
 
 /* No comment provided by engineer. */
 "Reset Secret Key" = "Réinitialiser la clé secrète";
