@@ -5,7 +5,7 @@
 "Cancel" = "取消";
 
 /* Button title to delete a service */
-"Delete Service" = "Delete Service";
+"Delete Service" = "删除服务";
 
 /* The placeholder text for the Nightscout site URL */
 "https://mysite.herokuapp.com" = "https://mysite.herokuapp.com";
@@ -19,3 +19,59 @@
 /* No comment provided by engineer. */
 "Status" = "状态";
 
+/* The title of the Nightscout API secret */
+"API Secret" = "API 密钥";
+
+/* No comment provided by engineer. */
+"Are you sure you want to reset the secret key?" = "确定要重置秘钥吗？";
+
+/* Button text to cancel Nightscout credential input */
+"Cancel" = "取消";
+
+/* Description of ServiceStatus of checking */
+"Checking..." = "检查中...";
+
+/* Button title to delete a service */
+"Delete Service" = "删除服务";
+
+/* No comment provided by engineer. */
+"Done" = "完成";
+
+/* The placeholder text for the Nightscout site URL */
+"https://mysite.herokuapp.com" = "https://mysite.herokuapp.com";
+
+/* Button text to login on Nightscout CredentialsView */
+"Login" = "登录";
+
+/* No comment provided by engineer. */
+"Logout" = "注销";
+
+/* No comment provided by engineer. */
+"Nightscout" = "Nightscout";
+
+/* Title on Nightscout CredentialsView */
+"Nightscout Login" = "Nightscout 登录";
+
+/* Error when nightscout service url is not set */
+"Not Available" = "不可用";
+
+/* Description of ServiceStatus of checking */
+"OK" = "正常";
+
+/* No comment provided by engineer. */
+"One-Time Password" = "一次性密码";
+
+/* The default placeholder for required text */
+"Required" = "必填";
+
+/* No comment provided by engineer. */
+"Reset Secret Key" = "重置秘钥";
+
+/* The title of the Nightscout site URL */
+"Site URL" = "站点 URL";
+
+/* No comment provided by engineer. */
+"Status" = "状态";
+
+/* No comment provided by engineer. */
+"URL" = "URL";
