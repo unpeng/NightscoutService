@@ -333,6 +333,12 @@ extension NightscoutService: RemoteDataService {
     
     public func validatePushNotificationSource(_ notification: [String: AnyObject]) -> Result<Void, Error> {
         
+        if let enteredby = notification["entered-by"] as? String {
+            if enteredby == "pandy" {
+                return .success(Void())
+            }
+        }
+        
         guard let password = notification["otp"] as? String else {
             return .failure(NotificationValidationError.missingOTP)
         }

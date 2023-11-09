@@ -143,7 +143,7 @@ extension StoredDosingDecision {
     }
     
     func deviceStatus(automaticDoseDecision: StoredDosingDecision?) -> DeviceStatus {
-        return DeviceStatus(device: "loop://\(UIDevice.current.name)",
+        return DeviceStatus(device: "loop://\(UIDevice.current.name)|\(automaticDoseDecision?.automaticDosingStrategy ?? "tempBasalOnly")",
             timestamp: date,
             pumpStatus: pumpStatus,
             uploaderStatus: uploaderStatus,
